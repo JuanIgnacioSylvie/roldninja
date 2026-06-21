@@ -1,0 +1,31 @@
+{
+  "name": "roldninja",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Roldninja — mesa virtual para jugar D&D 2024 (5.5) online: auth, partidas, creacion de personajes, mapa del mundo (Azgaar), chat y dashboard de sesion con widgets y modo combate.",
+  "packageManager": "pnpm@11.8.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "pnpm db:generate && turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:generate": "pnpm --filter @roldninja/db generate",
+    "db:migrate": "pnpm --filter @roldninja/db migrate",
+    "db:seed": "pnpm --filter @roldninja/db seed",
+    "azgaar:setup": "node scripts/setup-azgaar.mjs",
+    "monsters:fetch": "node scripts/fetch-monsters.mjs",
+    "monsters:tokens": "node scripts/build-monster-token-index.mjs",
+    "spells:fetch": "node scripts/fetch-spells.mjs"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "^5.7.3",
+    "@types/node": "^22.13.0"
+  }
+}

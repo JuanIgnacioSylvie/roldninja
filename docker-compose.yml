@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: roldninja-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: roldninja
+      POSTGRES_PASSWORD: roldninja
+      POSTGRES_DB: roldninja
+    ports:
+      - "5432:5432"
+    volumes:
+      - roldninja_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U roldninja -d roldninja"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  roldninja_pgdata:

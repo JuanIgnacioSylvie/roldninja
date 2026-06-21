@@ -1,0 +1,39 @@
+# deps
+node_modules/
+.pnpm-store/
+
+# build
+dist/
+.next/
+out/
+build/
+*.tsbuildinfo
+
+# turbo
+.turbo/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# prisma
+packages/db/prisma/*.db
+
+# azgaar self-host (fuente clonada + build desplegado en public)
+.azgaar-src/
+apps/web/public/azgaar/
+
+# manuales D&D (PDFs grandes; hostear aparte o copiar manualmente en el servidor)
+apps/web/public/manuals/*.pdf
+
+# logs
+*.log
+npm-debug.log*
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json

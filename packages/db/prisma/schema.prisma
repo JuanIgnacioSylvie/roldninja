@@ -1,0 +1,183 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum CampaignMode {
+  FREE
+  COMBAT
+}
+
+enum ChatKind {
+  USER
+  SYSTEM
+  ROLL
+}
+
+/// Usuarios creados manualmente en la DB (login unico). Todos iguales; el rol (DM/jugador) es por partida.
+model User {
+  id           String   @id @default(cuid())
+  username     String   @unique
+  passwordHash String
+  displayName  String
+  createdAt    DateTime @default(now())
+
+  ownedCampaigns Campaign[]          @relation("CampaignDM")
+  memberships    CampaignMembership[]
+  characters     Character[]
+  messages       ChatMessage[]
+  layouts        DashboardLayout[]
+}
+
+/// Una partida / mesa. Pertenece a un DM.
+model Campaign {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  dmId        String
+  createdAt   DateTime @default(now())
+
+  dm          User                 @relation("CampaignDM", fields: [dmId], references: [id])
+  members     CampaignMembership[]
+  characters  Character[]
+  boards      Board[]
+  worldMaps   WorldMap[]
+  messages    ChatMessage[]
+  layouts     DashboardLayout[]
+  state       CampaignState?
+}
+
+/// Jugadores que participan de una partida.
+model CampaignMembership {
+  id         String   @id @default(cuid())
+  campaignId String
+  userId     String
+  joinedAt   DateTime @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([campaignId, userId])
+}
+
+/// Personaje de un jugador dentro de una partida.
+/// `sheet` guarda la hoja completa (resultado del wizard de creacion) como JSON.
+model Character {
+  id         String   @id @default(cuid())
+  campaignId String
+  ownerId    String
+  name       String
+  species    String?
+  class      String?
+  background String?
+  level      Int      @default(1)
+  /// Hoja completa: ability scores, skills, equipo, hechizos, hp, etc.
+  sheet      Json     @default("{}")
+  /// Indica si el wizard de creacion termino.
+  isComplete Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  owner    User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  tokens   Token[]
+}
+
+/// Tablero de combate (cuadricula NxM con imagen de fondo). Lo crea el DM.
+model Board {
+  id            String   @id @default(cuid())
+  campaignId    String
+  name          String
+  cols          Int      @default(20)
+  rows          Int      @default(20)
+  backgroundUrl String?
+  gridColor     String   @default("#ffffff")
+  gridOpacity   Float    @default(0.08)
+  gridLineWidth Float    @default(1)
+  isActive      Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  tokens   Token[]
+}
+
+/// Ficha/token sobre el tablero.
+model Token {
+  id          String  @id @default(cuid())
+  boardId     String
+  characterId String?
+  label       String
+  x           Int     @default(0)
+  y           Int     @default(0)
+  color       String  @default("#e11d48")
+  imageUrl    String?
+  size        Int     @default(1)
+  /// Visible solo para el DM (token oculto a los jugadores).
+  hidden      Boolean @default(false)
+  hp          Int?
+  maxHp       Int?
+
+  board     Board      @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  character Character? @relation(fields: [characterId], references: [id], onDelete: SetNull)
+}
+
+/// Mapa del mundo: subido por el DM o generado/guardado desde Azgaar.
+model WorldMap {
+  id         String   @id @default(cuid())
+  campaignId String
+  name       String
+  /// "uploaded" | "azgaar"
+  type       String   @default("uploaded")
+  /// URL de imagen, o ruta del .map exportado de Azgaar.
+  fileUrl    String?
+  createdAt  DateTime @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+}
+
+model ChatMessage {
+  id         String   @id @default(cuid())
+  campaignId String
+  userId     String?
+  kind       ChatKind @default(USER)
+  content    String
+  /// Datos extra para tiradas/acciones resueltas por el servidor.
+  payload    Json?
+  createdAt  DateTime @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  user     User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+/// Estado vivo de la partida: modo libre/combate, iniciativa, tablero activo.
+model CampaignState {
+  campaignId    String       @id
+  mode          CampaignMode @default(FREE)
+  activeBoardId String?
+  round         Int          @default(0)
+  turnIndex     Int          @default(0)
+  /// Orden de iniciativa: [{ characterId, name, initiative, userId }]
+  initiative    Json         @default("[]")
+  updatedAt     DateTime     @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+}
+
+/// Layout del dashboard por usuario y partida (posicion/tamano de widgets).
+model DashboardLayout {
+  id         String   @id @default(cuid())
+  campaignId String
+  userId     String
+  /// Array de react-grid-layout: [{ i, x, y, w, h }]
+  layout     Json     @default("[]")
+  updatedAt  DateTime @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([campaignId, userId])
+}

@@ -1,0 +1,647 @@
+{
+  "sources": [
+    {
+      "type": "local",
+      "path": "srd-samples",
+      "label": "Tom Cartos — SRD Sample Tokens (local)"
+    },
+    {
+      "type": "drive",
+      "id": "1cyvyKO0I-C2hhtHvOP3-vBHC84l6P-9f",
+      "label": "Tom Cartos — Character & Creature Tokens"
+    }
+  ],
+  "files": 592,
+  "matched": 99,
+  "map": {
+    "aboleth": {
+      "source": "local",
+      "fileName": "aboleth_large_aberration_01.png",
+      "path": "srd-samples/CR09-10 Sample Set/aboleth_large_aberration_01.png",
+      "url": "/monster-tokens/srd-samples/CR09-10%20Sample%20Set/aboleth_large_aberration_01.png"
+    },
+    "adult-blue-dragon": {
+      "source": "drive",
+      "driveId": "1UDYAf65ITDYoGhgTlTdLTlXh5FvOk8TT",
+      "fileName": "adult blue dragon.png",
+      "path": "Dragons/adult blue dragon.png",
+      "url": "https://drive.google.com/thumbnail?id=1UDYAf65ITDYoGhgTlTdLTlXh5FvOk8TT&sz=w256"
+    },
+    "adult-gold-dragon": {
+      "source": "drive",
+      "driveId": "1FPfSpdS3iAkIBbCseuZ16X_3OGMiZdsU",
+      "fileName": "adult gold dragon.png",
+      "path": "Dragons/adult gold dragon.png",
+      "url": "https://drive.google.com/thumbnail?id=1FPfSpdS3iAkIBbCseuZ16X_3OGMiZdsU&sz=w256"
+    },
+    "adult-green-dragon": {
+      "source": "drive",
+      "driveId": "1zl60fBN4C551EgLjte8d3g1EfNEFbFpt",
+      "fileName": "adult green dragon.png",
+      "path": "Dragons/adult green dragon.png",
+      "url": "https://drive.google.com/thumbnail?id=1zl60fBN4C551EgLjte8d3g1EfNEFbFpt&sz=w256"
+    },
+    "adult-silver-dragon": {
+      "source": "drive",
+      "driveId": "1vMFdymm13fsAZcdltYR93ISLmGs6H2ON",
+      "fileName": "adult silver dragon.png",
+      "path": "Dragons/adult silver dragon.png",
+      "url": "https://drive.google.com/thumbnail?id=1vMFdymm13fsAZcdltYR93ISLmGs6H2ON&sz=w256"
+    },
+    "adult-white-dragon": {
+      "source": "drive",
+      "driveId": "1CZUBk_BlesqSsX6qs2_0BnBTg-Gj_Hnw",
+      "fileName": "adult white dragon.png",
+      "path": "Dragons/adult white dragon.png",
+      "url": "https://drive.google.com/thumbnail?id=1CZUBk_BlesqSsX6qs2_0BnBTg-Gj_Hnw&sz=w256"
+    },
+    "air-elemental": {
+      "source": "local",
+      "fileName": "air_large_elemental_01.png",
+      "path": "srd-samples/CR05 Sample Set/air_large_elemental_01.png",
+      "url": "/monster-tokens/srd-samples/CR05%20Sample%20Set/air_large_elemental_01.png"
+    },
+    "ancient-red-dragon": {
+      "source": "local",
+      "fileName": "ancient_red_dragon_gargantuan_01.png",
+      "path": "srd-samples/CR21+ - Sample Set/ancient_red_dragon_gargantuan_01.png",
+      "url": "/monster-tokens/srd-samples/CR21%2B%20-%20Sample%20Set/ancient_red_dragon_gargantuan_01.png"
+    },
+    "ape": {
+      "source": "local",
+      "fileName": "ape_medium_beast_01.png",
+      "path": "srd-samples/CR 0-5 Sample Set/ape_medium_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-5%20Sample%20Set/ape_medium_beast_01.png"
+    },
+    "archmage": {
+      "source": "drive",
+      "driveId": "1INkkIqXvJkui1fvS47ZylR5pJY5nyIAs",
+      "fileName": "drow archmage.png",
+      "path": "Drow - Dark Elves/drow archmage.png",
+      "url": "https://drive.google.com/thumbnail?id=1INkkIqXvJkui1fvS47ZylR5pJY5nyIAs&sz=w256"
+    },
+    "awakened-tree": {
+      "source": "local",
+      "fileName": "awakened_tree_huge_plant_01.png",
+      "path": "srd-samples/custom/awakened_tree_huge_plant_01.png",
+      "url": "/monster-tokens/srd-samples/custom/awakened_tree_huge_plant_01.png"
+    },
+    "baboon": {
+      "source": "local",
+      "fileName": "Baboon_Small_Beast_01.png",
+      "path": "srd-samples/CR0 Sample Set/Baboon_Small_Beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR0%20Sample%20Set/Baboon_Small_Beast_01.png"
+    },
+    "badger": {
+      "source": "local",
+      "fileName": "badger_small_beast_01.png",
+      "path": "srd-samples/custom/badger_small_beast_01.png",
+      "url": "/monster-tokens/srd-samples/custom/badger_small_beast_01.png"
+    },
+    "bat": {
+      "source": "drive",
+      "driveId": "1Cn0MyO6cLDfN8ySWGvo1v4fXytcezhyS",
+      "fileName": "bat 1.png",
+      "path": "Beasts/Bats/bat 1.png",
+      "url": "https://drive.google.com/thumbnail?id=1Cn0MyO6cLDfN8ySWGvo1v4fXytcezhyS&sz=w256"
+    },
+    "behir": {
+      "source": "drive",
+      "driveId": "1NbrfwZY0DLY62kI2-rEnqVOBDc-T07zn",
+      "fileName": "behir.png",
+      "path": "Beasts/Miscellaneous Beasts/behir.png",
+      "url": "https://drive.google.com/thumbnail?id=1NbrfwZY0DLY62kI2-rEnqVOBDc-T07zn&sz=w256"
+    },
+    "boar": {
+      "source": "local",
+      "fileName": "giant_boar_large_beast_01.png",
+      "path": "srd-samples/CR02 Part 1 Sample Set/giant_boar_large_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%201%20Sample%20Set/giant_boar_large_beast_01.png"
+    },
+    "bone-devil": {
+      "source": "drive",
+      "driveId": "13T7I6O2CSwf0IwTlzshLPMXbuwynlbg9",
+      "fileName": "bone devil.png",
+      "path": "Demons and Devils/bone devil.png",
+      "url": "https://drive.google.com/thumbnail?id=13T7I6O2CSwf0IwTlzshLPMXbuwynlbg9&sz=w256"
+    },
+    "brown-bear": {
+      "source": "local",
+      "fileName": "brown_bear_large_beast_01.png",
+      "path": "srd-samples/CR01 Sample Set/brown_bear_large_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR01%20Sample%20Set/brown_bear_large_beast_01.png"
+    },
+    "bugbear": {
+      "source": "local",
+      "fileName": "bugbear_melee_medium_humanoid_01.png",
+      "path": "srd-samples/CR01 Sample Set/bugbear_melee_medium_humanoid_01.png",
+      "url": "/monster-tokens/srd-samples/CR01%20Sample%20Set/bugbear_melee_medium_humanoid_01.png"
+    },
+    "cat": {
+      "source": "drive",
+      "driveId": "1HGA7XC64AXqFGd5S-Z9pD60j_Hs4z3td",
+      "fileName": "cat 1.png",
+      "path": "Beasts/Felines/cat 1.png",
+      "url": "https://drive.google.com/thumbnail?id=1HGA7XC64AXqFGd5S-Z9pD60j_Hs4z3td&sz=w256"
+    },
+    "centaur": {
+      "source": "drive",
+      "driveId": "1qgL7oH6BHQtnZRyHASnlT4sN_V01UzUa",
+      "fileName": "centaur archer.png",
+      "path": "Centaurs/centaur archer.png",
+      "url": "https://drive.google.com/thumbnail?id=1qgL7oH6BHQtnZRyHASnlT4sN_V01UzUa&sz=w256"
+    },
+    "chimera": {
+      "source": "local",
+      "fileName": "chimera_large_monstrosity_01.png",
+      "path": "srd-samples/CR06 Sample Set/chimera_large_monstrosity_01.png",
+      "url": "/monster-tokens/srd-samples/CR06%20Sample%20Set/chimera_large_monstrosity_01.png"
+    },
+    "chuul": {
+      "source": "local",
+      "fileName": "chuul_large_aberration_01.png",
+      "path": "srd-samples/CR04 Sample Set/chuul_large_aberration_01.png",
+      "url": "/monster-tokens/srd-samples/CR04%20Sample%20Set/chuul_large_aberration_01.png"
+    },
+    "commoner": {
+      "source": "local",
+      "fileName": "commoner_medium_humanoid_01.png",
+      "path": "srd-samples/custom/commoner_medium_humanoid_01.png",
+      "url": "/monster-tokens/srd-samples/custom/commoner_medium_humanoid_01.png"
+    },
+    "crab": {
+      "source": "drive",
+      "driveId": "1ocleQZOBu7jMfPVR6mHFq4-6vu44RDNw",
+      "fileName": "crab with skull shell.png",
+      "path": "Beasts/Aquatic Creatures/crab with skull shell.png",
+      "url": "https://drive.google.com/thumbnail?id=1ocleQZOBu7jMfPVR6mHFq4-6vu44RDNw&sz=w256"
+    },
+    "cultist": {
+      "source": "drive",
+      "driveId": "1dpV7eNwRoHrk00W28H3ZwMaoLuTBtJ6l",
+      "fileName": "cultist of the far realms.png",
+      "path": "Abberations/cultist of the far realms.png",
+      "url": "https://drive.google.com/thumbnail?id=1dpV7eNwRoHrk00W28H3ZwMaoLuTBtJ6l&sz=w256"
+    },
+    "darkmantle": {
+      "source": "local",
+      "fileName": "darkmantle_small_monstrosity_01.png",
+      "path": "srd-samples/CR 0-5 Sample Set/darkmantle_small_monstrosity_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-5%20Sample%20Set/darkmantle_small_monstrosity_01.png"
+    },
+    "deer": {
+      "source": "local",
+      "fileName": "Deer_Medium_Beast_01.png",
+      "path": "srd-samples/CR0 Sample Set/Deer_Medium_Beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR0%20Sample%20Set/Deer_Medium_Beast_01.png"
+    },
+    "djinni": {
+      "source": "drive",
+      "driveId": "1P1dCPSFoWu_ixLULj4l-bdvzpIYzRygY",
+      "fileName": "djinni arcanist flying.png",
+      "path": "Djinni/djinni arcanist flying.png",
+      "url": "https://drive.google.com/thumbnail?id=1P1dCPSFoWu_ixLULj4l-bdvzpIYzRygY&sz=w256"
+    },
+    "dragon-turtle": {
+      "source": "local",
+      "fileName": "dragon_turtle_gargantuan_dragon_01.png",
+      "path": "srd-samples/CR17-20 Sample Set/dragon_turtle_gargantuan_dragon_01.png",
+      "url": "/monster-tokens/srd-samples/CR17-20%20Sample%20Set/dragon_turtle_gargantuan_dragon_01.png"
+    },
+    "drider": {
+      "source": "local",
+      "fileName": "drider_large_monstrosity_01.png",
+      "path": "srd-samples/CR06 Sample Set/drider_large_monstrosity_01.png",
+      "url": "/monster-tokens/srd-samples/CR06%20Sample%20Set/drider_large_monstrosity_01.png"
+    },
+    "drow": {
+      "source": "drive",
+      "driveId": "1NQKbug-Ws_DbsqqR9REOs9Fy_2MT1ghp",
+      "fileName": "drow adolescent.png",
+      "path": "Drow - Dark Elves/drow adolescent.png",
+      "url": "https://drive.google.com/thumbnail?id=1NQKbug-Ws_DbsqqR9REOs9Fy_2MT1ghp&sz=w256"
+    },
+    "druid": {
+      "source": "drive",
+      "driveId": "1aszT9IYqFSZ6bvV4twpeg3wnyajd8Z2L",
+      "fileName": "centaur druid.png",
+      "path": "Centaurs/centaur druid.png",
+      "url": "https://drive.google.com/thumbnail?id=1aszT9IYqFSZ6bvV4twpeg3wnyajd8Z2L&sz=w256"
+    },
+    "duergar": {
+      "source": "drive",
+      "driveId": "1h9LuUN6wT7699ap2bvqRG5e9qBlvvhg6",
+      "fileName": "duergar angry.png",
+      "path": "Dwarves/Duergar/duergar angry.png",
+      "url": "https://drive.google.com/thumbnail?id=1h9LuUN6wT7699ap2bvqRG5e9qBlvvhg6&sz=w256"
+    },
+    "eagle": {
+      "source": "local",
+      "fileName": "Eagle_Small_Beast_01.png",
+      "path": "srd-samples/CR0 Sample Set/Eagle_Small_Beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR0%20Sample%20Set/Eagle_Small_Beast_01.png"
+    },
+    "earth-elemental": {
+      "source": "local",
+      "fileName": "earth_large_elemental_01.png",
+      "path": "srd-samples/CR05 Sample Set/earth_large_elemental_01.png",
+      "url": "/monster-tokens/srd-samples/CR05%20Sample%20Set/earth_large_elemental_01.png"
+    },
+    "elk": {
+      "source": "drive",
+      "driveId": "1vHDwzfbNZ_RiTxAgkUPXOyKW6jsVNNfS",
+      "fileName": "elk in waterfall.png",
+      "path": "Beasts/Miscellaneous Beasts/elk in waterfall.png",
+      "url": "https://drive.google.com/thumbnail?id=1vHDwzfbNZ_RiTxAgkUPXOyKW6jsVNNfS&sz=w256"
+    },
+    "fire-elemental": {
+      "source": "local",
+      "fileName": "fire_large_elemental_01.png",
+      "path": "srd-samples/CR05 Sample Set/fire_large_elemental_01.png",
+      "url": "/monster-tokens/srd-samples/CR05%20Sample%20Set/fire_large_elemental_01.png"
+    },
+    "frog": {
+      "source": "drive",
+      "driveId": "1iI_hATPrhdVtat7UHPl9gfr7aEYFkm1v",
+      "fileName": "frog.png",
+      "path": "Beasts/Miscellaneous Beasts/frog.png",
+      "url": "https://drive.google.com/thumbnail?id=1iI_hATPrhdVtat7UHPl9gfr7aEYFkm1v&sz=w256"
+    },
+    "gelatinous-cube": {
+      "source": "local",
+      "fileName": "gelatinous_cube_large_ooze_01.png",
+      "path": "srd-samples/CR02 Part 1 Sample Set/gelatinous_cube_large_ooze_01.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%201%20Sample%20Set/gelatinous_cube_large_ooze_01.png"
+    },
+    "ghast": {
+      "source": "local",
+      "fileName": "ghast_medium_undead_01.png",
+      "path": "srd-samples/CR02 Part 3 Sample Set/ghast_medium_undead_01.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%203%20Sample%20Set/ghast_medium_undead_01.png"
+    },
+    "giant-boar": {
+      "source": "local",
+      "fileName": "giant_boar_large_beast_01.png",
+      "path": "srd-samples/CR02 Part 1 Sample Set/giant_boar_large_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%201%20Sample%20Set/giant_boar_large_beast_01.png"
+    },
+    "giant-fire-beetle": {
+      "source": "local",
+      "fileName": "giant_owl_large_beast_01.png",
+      "path": "srd-samples/CR 0-25 Sample Set/giant_owl_large_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_owl_large_beast_01.png"
+    },
+    "giant-owl": {
+      "source": "local",
+      "fileName": "giant_owl_large_beast_01.png",
+      "path": "srd-samples/CR 0-25 Sample Set/giant_owl_large_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_owl_large_beast_01.png"
+    },
+    "giant-spider": {
+      "source": "drive",
+      "driveId": "1BTE_cGr6VmVbBFhdg0DCRUbMKo5AtzNC",
+      "fileName": "giant spider.png",
+      "path": "Beasts/Aranae and other Arthropods/giant spider.png",
+      "url": "https://drive.google.com/thumbnail?id=1BTE_cGr6VmVbBFhdg0DCRUbMKo5AtzNC&sz=w256"
+    },
+    "giant-toad": {
+      "source": "local",
+      "fileName": "giant_toad_large_beast_01.png",
+      "path": "srd-samples/CR01 Sample Set/giant_toad_large_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR01%20Sample%20Set/giant_toad_large_beast_01.png"
+    },
+    "giant-wolf-spider": {
+      "source": "local",
+      "fileName": "giant_wolf_spider_medium_beast_01.png",
+      "path": "srd-samples/CR 0-25 Sample Set/giant_wolf_spider_medium_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_wolf_spider_medium_beast_01.png"
+    },
+    "goblin": {
+      "source": "local",
+      "fileName": "goblin_medium_humanoid_ranged_01.png",
+      "path": "srd-samples/CR 0-25 Sample Set/goblin_medium_humanoid_ranged_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/goblin_medium_humanoid_ranged_01.png"
+    },
+    "gray-ooze": {
+      "source": "local",
+      "fileName": "gray_ooze_medium_01.png",
+      "path": "srd-samples/CR 0-5 Sample Set/gray_ooze_medium_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-5%20Sample%20Set/gray_ooze_medium_01.png"
+    },
+    "grick": {
+      "source": "local",
+      "fileName": "grick_medium_monstrosity_01.png",
+      "path": "srd-samples/CR02 Part 3 Sample Set/grick_medium_monstrosity_01.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%203%20Sample%20Set/grick_medium_monstrosity_01.png"
+    },
+    "hawk": {
+      "source": "drive",
+      "driveId": "1ipY4XTmqgFeyYR-XmaMSu9CEwJKlnnTk",
+      "fileName": "hawk in snow.png",
+      "path": "Beasts/Birds/hawk in snow.png",
+      "url": "https://drive.google.com/thumbnail?id=1ipY4XTmqgFeyYR-XmaMSu9CEwJKlnnTk&sz=w256"
+    },
+    "hell-hound": {
+      "source": "local",
+      "fileName": "hell_hound_medium_fiend_01.png",
+      "path": "srd-samples/CR03 Sample Set/hell_hound_medium_fiend_01.png",
+      "url": "/monster-tokens/srd-samples/CR03%20Sample%20Set/hell_hound_medium_fiend_01.png"
+    },
+    "hezrou": {
+      "source": "local",
+      "fileName": "hezrou_large_fiend_01.png",
+      "path": "srd-samples/CR07-08 Sample Set/hezrou_large_fiend_01.png",
+      "url": "/monster-tokens/srd-samples/CR07-08%20Sample%20Set/hezrou_large_fiend_01.png"
+    },
+    "hobgoblin": {
+      "source": "local",
+      "fileName": "hobgoblin_medium_humanoid_melee_01.png",
+      "path": "srd-samples/CR 0-5 Sample Set/hobgoblin_medium_humanoid_melee_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-5%20Sample%20Set/hobgoblin_medium_humanoid_melee_01.png"
+    },
+    "homunculus": {
+      "source": "local",
+      "fileName": "homunculus_tiny_construct_01.png",
+      "path": "srd-samples/custom/homunculus_tiny_construct_01.png",
+      "url": "/monster-tokens/srd-samples/custom/homunculus_tiny_construct_01.png"
+    },
+    "horned-devil": {
+      "source": "local",
+      "fileName": "horned_devil_large_fiend_01.png",
+      "path": "srd-samples/CR11-12- Sample Set/horned_devil_large_fiend_01.png",
+      "url": "/monster-tokens/srd-samples/CR11-12-%20Sample%20Set/horned_devil_large_fiend_01.png"
+    },
+    "hyena": {
+      "source": "local",
+      "fileName": "hyena_medium_beast_01.png",
+      "path": "srd-samples/custom/hyena_medium_beast_01.png",
+      "url": "/monster-tokens/srd-samples/custom/hyena_medium_beast_01.png"
+    },
+    "imp": {
+      "source": "local",
+      "fileName": "imp_tiny_fiend_01.png",
+      "path": "srd-samples/CR01 Sample Set/imp_tiny_fiend_01.png",
+      "url": "/monster-tokens/srd-samples/CR01%20Sample%20Set/imp_tiny_fiend_01.png"
+    },
+    "invisible-stalker": {
+      "source": "local",
+      "fileName": "invisible_stalker_medium_elemental_01.png",
+      "path": "srd-samples/custom/invisible_stalker_medium_elemental_01.png",
+      "url": "/monster-tokens/srd-samples/custom/invisible_stalker_medium_elemental_01.png"
+    },
+    "jackal": {
+      "source": "local",
+      "fileName": "jackal_medium_beast_01.png",
+      "path": "srd-samples/custom/jackal_medium_beast_01.png",
+      "url": "/monster-tokens/srd-samples/custom/jackal_medium_beast_01.png"
+    },
+    "knight": {
+      "source": "drive",
+      "driveId": "1SHZqot-tTGVpUZ3_kKmr7JPh7qJOk7Pc",
+      "fileName": "elf dark knight.png",
+      "path": "Elves and Half-Elves/elf dark knight.png",
+      "url": "https://drive.google.com/thumbnail?id=1SHZqot-tTGVpUZ3_kKmr7JPh7qJOk7Pc&sz=w256"
+    },
+    "kraken": {
+      "source": "drive",
+      "driveId": "1tpLhCgpT4Flv_SSVOtB8_j4VIJfrUxwr",
+      "fileName": "kraken.png",
+      "path": "Abberations/kraken.png",
+      "url": "https://drive.google.com/thumbnail?id=1tpLhCgpT4Flv_SSVOtB8_j4VIJfrUxwr&sz=w256"
+    },
+    "lemure": {
+      "source": "local",
+      "fileName": "lemure_medium_fiend_01.png",
+      "path": "srd-samples/custom/lemure_medium_fiend_01.png",
+      "url": "/monster-tokens/srd-samples/custom/lemure_medium_fiend_01.png"
+    },
+    "lion": {
+      "source": "local",
+      "fileName": "lion_large_beast_01.png",
+      "path": "srd-samples/CR01 Sample Set/lion_large_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR01%20Sample%20Set/lion_large_beast_01.png"
+    },
+    "lizard": {
+      "source": "local",
+      "fileName": "Lizard_Tiny_Beast_01.png",
+      "path": "srd-samples/CR0 Sample Set/Lizard_Tiny_Beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR0%20Sample%20Set/Lizard_Tiny_Beast_01.png"
+    },
+    "mage": {
+      "source": "drive",
+      "driveId": "19wQyIh0oUjSXzj4u8cPma9CqiughFixP",
+      "fileName": "elf mage tracker.png",
+      "path": "Elves and Half-Elves/elf mage tracker.png",
+      "url": "https://drive.google.com/thumbnail?id=19wQyIh0oUjSXzj4u8cPma9CqiughFixP&sz=w256"
+    },
+    "mimic": {
+      "source": "local",
+      "fileName": "mimic_medium_monstrosity_01.png",
+      "path": "srd-samples/CR02 Part 3 Sample Set/mimic_medium_monstrosity_01.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%203%20Sample%20Set/mimic_medium_monstrosity_01.png"
+    },
+    "minotaur": {
+      "source": "local",
+      "fileName": "minotaur_large_monstrosity_01.png",
+      "path": "srd-samples/CR03 Sample Set/minotaur_large_monstrosity_01.png",
+      "url": "/monster-tokens/srd-samples/CR03%20Sample%20Set/minotaur_large_monstrosity_01.png"
+    },
+    "nightmare": {
+      "source": "drive",
+      "driveId": "1ykofTfch3oZ_kcIk5R_KVqorTiK9Z4NA",
+      "fileName": "nightmare given form.png",
+      "path": "Abberations/nightmare given form.png",
+      "url": "https://drive.google.com/thumbnail?id=1ykofTfch3oZ_kcIk5R_KVqorTiK9Z4NA&sz=w256"
+    },
+    "noble": {
+      "source": "drive",
+      "driveId": "1K6mKEmp48aGVHHL_gagIT2_uU48s_f4Z",
+      "fileName": "drow noble contemplative.png",
+      "path": "Drow - Dark Elves/drow noble contemplative.png",
+      "url": "https://drive.google.com/thumbnail?id=1K6mKEmp48aGVHHL_gagIT2_uU48s_f4Z&sz=w256"
+    },
+    "octopus": {
+      "source": "drive",
+      "driveId": "15GmUh64buq-QhHjZNO6rVv1izvGNmage",
+      "fileName": "octopus.png",
+      "path": "Beasts/Aquatic Creatures/octopus.png",
+      "url": "https://drive.google.com/thumbnail?id=15GmUh64buq-QhHjZNO6rVv1izvGNmage&sz=w256"
+    },
+    "oni": {
+      "source": "local",
+      "fileName": "oni_large_giant_01.png",
+      "path": "srd-samples/CR07-08 Sample Set/oni_large_giant_01.png",
+      "url": "/monster-tokens/srd-samples/CR07-08%20Sample%20Set/oni_large_giant_01.png"
+    },
+    "owl": {
+      "source": "local",
+      "fileName": "giant_owl_large_beast_01.png",
+      "path": "srd-samples/CR 0-25 Sample Set/giant_owl_large_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_owl_large_beast_01.png"
+    },
+    "owlbear": {
+      "source": "local",
+      "fileName": "owlbear_large_monstrosity_01.png",
+      "path": "srd-samples/CR03 Sample Set/owlbear_large_monstrosity_01.png",
+      "url": "/monster-tokens/srd-samples/CR03%20Sample%20Set/owlbear_large_monstrosity_01.png"
+    },
+    "priest": {
+      "source": "local",
+      "fileName": "priest_medium_humanoid_male_01.png",
+      "path": "srd-samples/CR02 Part 2 Sample Set/priest_medium_humanoid_male_01.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%202%20Sample%20Set/priest_medium_humanoid_male_01.png"
+    },
+    "purple-worm": {
+      "source": "local",
+      "fileName": "purple_worm_gargantuan_monstrosity_01.png",
+      "path": "srd-samples/CR15-16 Sample Set/purple_worm_gargantuan_monstrosity_01.png",
+      "url": "/monster-tokens/srd-samples/CR15-16%20Sample%20Set/purple_worm_gargantuan_monstrosity_01.png"
+    },
+    "quipper": {
+      "source": "local",
+      "fileName": "quipper_tiny_beast_01.png",
+      "path": "srd-samples/custom/quipper_tiny_beast_01.png",
+      "url": "/monster-tokens/srd-samples/custom/quipper_tiny_beast_01.png"
+    },
+    "rat": {
+      "source": "drive",
+      "driveId": "1-jQ4GQDzfMe6-oxdm3dkfFEShsP03_SL",
+      "fileName": "rat.png",
+      "path": "Beasts/Rodents/rat.png",
+      "url": "https://drive.google.com/thumbnail?id=1-jQ4GQDzfMe6-oxdm3dkfFEShsP03_SL&sz=w256"
+    },
+    "raven": {
+      "source": "drive",
+      "driveId": "1x-LIiNXi7uFMbJ7MxZVCQpQfuGMMhyw6",
+      "fileName": "raven 1.png",
+      "path": "Beasts/Birds/raven 1.png",
+      "url": "https://drive.google.com/thumbnail?id=1x-LIiNXi7uFMbJ7MxZVCQpQfuGMMhyw6&sz=w256"
+    },
+    "rug-of-smothering": {
+      "source": "local",
+      "fileName": "rug-of-smothering_large_construct_04.png",
+      "path": "srd-samples/CR02 Part 2 Sample Set/rug-of-smothering_large_construct_04.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%202%20Sample%20Set/rug-of-smothering_large_construct_04.png"
+    },
+    "rust-monster": {
+      "source": "local",
+      "fileName": "rust_monster_medium_monstrosity_01.png",
+      "path": "srd-samples/CR 0-5 Sample Set/rust_monster_medium_monstrosity_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-5%20Sample%20Set/rust_monster_medium_monstrosity_01.png"
+    },
+    "scorpion": {
+      "source": "drive",
+      "driveId": "1V6nlxAmcsPZstdtEfW6joBAwIzoy7wr_",
+      "fileName": "scorpion.png",
+      "path": "Beasts/Aranae and other Arthropods/scorpion.png",
+      "url": "https://drive.google.com/thumbnail?id=1V6nlxAmcsPZstdtEfW6joBAwIzoy7wr_&sz=w256"
+    },
+    "scout": {
+      "source": "drive",
+      "driveId": "1B4WHUA8XQdqPjb4wLB_km1809C-karqe",
+      "fileName": "centaur scout.png",
+      "path": "Centaurs/centaur scout.png",
+      "url": "https://drive.google.com/thumbnail?id=1B4WHUA8XQdqPjb4wLB_km1809C-karqe&sz=w256"
+    },
+    "sea-horse": {
+      "source": "local",
+      "fileName": "sea_horse_tiny_beast_01.png",
+      "path": "srd-samples/custom/sea_horse_tiny_beast_01.png",
+      "url": "/monster-tokens/srd-samples/custom/sea_horse_tiny_beast_01.png"
+    },
+    "shrieker": {
+      "source": "drive",
+      "driveId": "1rpx-XlqQ_azCZK_Dsbgg01kNrxKTz2I-",
+      "fileName": "shrieker.png",
+      "path": "Abberations/shrieker.png",
+      "url": "https://drive.google.com/thumbnail?id=1rpx-XlqQ_azCZK_Dsbgg01kNrxKTz2I-&sz=w256"
+    },
+    "silver-dragon-wyrmling": {
+      "source": "local",
+      "fileName": "silver_dragon_wormling_medium_01.png",
+      "path": "srd-samples/CR02 Part 2 Sample Set/silver_dragon_wormling_medium_01.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%202%20Sample%20Set/silver_dragon_wormling_medium_01.png"
+    },
+    "skeleton": {
+      "source": "local",
+      "fileName": "skeleton_medium_undead_melee01.png",
+      "path": "srd-samples/CR 0-25 Sample Set/skeleton_medium_undead_melee01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/skeleton_medium_undead_melee01.png"
+    },
+    "spider": {
+      "source": "local",
+      "fileName": "giant_wolf_spider_medium_beast_01.png",
+      "path": "srd-samples/CR 0-25 Sample Set/giant_wolf_spider_medium_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_wolf_spider_medium_beast_01.png"
+    },
+    "steam-mephit": {
+      "source": "local",
+      "fileName": "steam_mephit_small_elemental_01.png",
+      "path": "srd-samples/CR 0-25 Sample Set/steam_mephit_small_elemental_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/steam_mephit_small_elemental_01.png"
+    },
+    "treant": {
+      "source": "local",
+      "fileName": "treant_huge_plant_01.png",
+      "path": "srd-samples/CR09-10 Sample Set/treant_huge_plant_01.png",
+      "url": "/monster-tokens/srd-samples/CR09-10%20Sample%20Set/treant_huge_plant_01.png"
+    },
+    "tyrannosaurus-rex": {
+      "source": "local",
+      "fileName": "tyrannosaurus_rex_huge_beast_01.png",
+      "path": "srd-samples/CR07-08 Sample Set/tyrannosaurus_rex_huge_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR07-08%20Sample%20Set/tyrannosaurus_rex_huge_beast_01.png"
+    },
+    "unicorn": {
+      "source": "drive",
+      "driveId": "1TshuTk5pUIpb-klVqe06rzwz8Ouwiv5m",
+      "fileName": "unicorn.png",
+      "path": "Celestials/unicorn.png",
+      "url": "https://drive.google.com/thumbnail?id=1TshuTk5pUIpb-klVqe06rzwz8Ouwiv5m&sz=w256"
+    },
+    "vampire": {
+      "source": "local",
+      "fileName": "vampire_female_medium_undead_01.png",
+      "path": "srd-samples/CR13-14 Sample Set/vampire_female_medium_undead_01.png",
+      "url": "/monster-tokens/srd-samples/CR13-14%20Sample%20Set/vampire_female_medium_undead_01.png"
+    },
+    "water-elemental": {
+      "source": "local",
+      "fileName": "water_large_elemental_01.png",
+      "path": "srd-samples/CR05 Sample Set/water_large_elemental_01.png",
+      "url": "/monster-tokens/srd-samples/CR05%20Sample%20Set/water_large_elemental_01.png"
+    },
+    "wererat": {
+      "source": "local",
+      "fileName": "wererat_medium_humanoid_01.png",
+      "path": "srd-samples/CR02 Part 1 Sample Set/wererat_medium_humanoid_01.png",
+      "url": "/monster-tokens/srd-samples/CR02%20Part%201%20Sample%20Set/wererat_medium_humanoid_01.png"
+    },
+    "weretiger": {
+      "source": "local",
+      "fileName": "weretiger_medium_humanoid_01.png",
+      "path": "srd-samples/CR04 Sample Set/weretiger_medium_humanoid_01.png",
+      "url": "/monster-tokens/srd-samples/CR04%20Sample%20Set/weretiger_medium_humanoid_01.png"
+    },
+    "werewolf": {
+      "source": "drive",
+      "driveId": "19CsMh_lZGoyfZIuWe0xlRine2cI1Y2Dt",
+      "fileName": "werewolf abomination.png",
+      "path": "Abberations/werewolf abomination.png",
+      "url": "https://drive.google.com/thumbnail?id=19CsMh_lZGoyfZIuWe0xlRine2cI1Y2Dt&sz=w256"
+    },
+    "wolf": {
+      "source": "local",
+      "fileName": "giant_wolf_spider_medium_beast_01.png",
+      "path": "srd-samples/CR 0-25 Sample Set/giant_wolf_spider_medium_beast_01.png",
+      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_wolf_spider_medium_beast_01.png"
+    },
+    "zombie": {
+      "source": "drive",
+      "driveId": "1AImKlo4G_dPwc7XDH692ndLzLbrkmkaZ",
+      "fileName": "zombie abberation.png",
+      "path": "Abberations/zombie abberation.png",
+      "url": "https://drive.google.com/thumbnail?id=1AImKlo4G_dPwc7XDH692ndLzLbrkmkaZ&sz=w256"
+    }
+  }
+}
