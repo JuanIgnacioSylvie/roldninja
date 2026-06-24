@@ -18,6 +18,18 @@ const FILE_MONSTER_ALIASES = {
   "water large elemental": "water-elemental",
 };
 
+/** Monstruos curados (no SRD) que tienen token con nombre distinto al id. */
+const CURATED_MONSTERS = [
+  { id: "contemplador", keys: ["beholder", "contemplador"] },
+  { id: "azotamentes", keys: ["mind flayer", "azotamentes", "illithid"] },
+];
+
+function sourcePriority(file) {
+  if (file.path?.startsWith("wotc-2024/")) return 3;
+  if (file.source === "local") return 2;
+  return 1;
+}
+
 function driveThumbUrl(driveId) {
   return `https://drive.google.com/thumbnail?id=${driveId}&sz=w256`;
 }
@@ -130,7 +142,9 @@ function crawlLocal(relativeRoot) {
 }
 
 function monsterKeys(monster) {
-  return [slugToPhrase(monster.id), normalize(monster.nameEn), normalize(monster.nameEs)].filter(Boolean);
+  const keys = [slugToPhrase(monster.id), normalize(monster.nameEn), normalize(monster.nameEs)];
+  if (monster.extraKeys) keys.push(...monster.extraKeys.map(normalize));
+  return keys.filter(Boolean);
 }
 
 function scoreMatch(monster, file) {
@@ -150,7 +164,7 @@ function scoreMatch(monster, file) {
 
   for (const key of keys) {
     const n = normalize(file.fileName);
-    if (n.includes(` ${key} `) || n.endsWith(` ${key}`)) return 50;
+    if (n.startsWith(`${key} `) || n === key) return 50;
   }
 
   for (const [alias, slug] of Object.entries(FILE_MONSTER_ALIASES)) {
@@ -163,10 +177,13 @@ function scoreMatch(monster, file) {
 function bestMatch(monster, files) {
   let best = null;
   let bestScore = 0;
+  let bestPriority = 0;
   for (const file of files) {
     const score = scoreMatch(monster, file);
-    if (score > bestScore) {
+    const priority = sourcePriority(file);
+    if (score > bestScore || (score === bestScore && score > 0 && priority > bestPriority)) {
       bestScore = score;
+      bestPriority = priority;
       best = file;
     }
   }
@@ -216,10 +233,22 @@ async function main() {
     readFileSync(join(__dirname, "..", "apps", "web", "public", "srd-monsters.json"), "utf8"),
   );
 
+  const allFiles = [...localFiles, ...driveFiles];
   const map = {};
   for (const m of monsters) {
-    const token = bestMatch(m, localFiles) ?? bestMatch(m, driveFiles);
+    const token = bestMatch(m, allFiles);
     if (token) map[m.id] = toEntry(token);
+  }
+
+  let curatedMatched = 0;
+  for (const c of CURATED_MONSTERS) {
+    if (map[c.id]) continue;
+    const pseudo = { id: c.id, nameEn: c.keys[0], nameEs: c.keys.at(-1), extraKeys: c.keys };
+    const token = bestMatch(pseudo, allFiles);
+    if (token) {
+      map[c.id] = toEntry(token);
+      curatedMatched++;
+    }
   }
 
   mkdirSync(outDir, { recursive: true });
@@ -228,15 +257,19 @@ async function main() {
     JSON.stringify(
       {
         sources,
-        files: localFiles.length + driveFiles.length,
+        files: allFiles.length,
         matched: Object.keys(map).length,
+        srdMatched: monsters.filter((m) => map[m.id]).length,
+        curatedMatched,
         map,
       },
       null,
       2,
     ),
   );
-  console.log(`[tokens] ${Object.keys(map).length}/${monsters.length} monstruos SRD -> ${indexFile}`);
+  console.log(
+    `[tokens] ${monsters.filter((m) => map[m.id]).length}/${monsters.length} SRD, ${curatedMatched} curados -> ${indexFile}`,
+  );
 }
 
 main().catch((err) => {

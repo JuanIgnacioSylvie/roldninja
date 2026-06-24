@@ -1,6 +1,7 @@
 import type {
   Board,
   Campaign,
+  AbilityScoreMethod,
   Character,
   CharacterSheet,
   ChatKind,
@@ -12,6 +13,22 @@ import type {
 } from "@roldninja/domain";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+function toAbilityScoreMethod(value: string | undefined): AbilityScoreMethod {
+  return value === "STANDARD_ARRAY" ? "array" : "pointbuy";
+}
+
+function toCampaignVisibility(value: string | undefined): "public" | "private" {
+  return value === "PUBLIC" ? "public" : "private";
+}
+
+export function fromAbilityScoreMethod(method: AbilityScoreMethod): "POINT_BUY" | "STANDARD_ARRAY" {
+  return method === "array" ? "STANDARD_ARRAY" : "POINT_BUY";
+}
+
+export function fromCampaignVisibility(visibility: "public" | "private"): "PUBLIC" | "PRIVATE" {
+  return visibility === "public" ? "PUBLIC" : "PRIVATE";
+}
 
 export function toUser(row: any): User {
   return {
@@ -27,6 +44,9 @@ export function toCampaign(row: any): Campaign {
     id: row.id,
     name: row.name,
     description: row.description ?? null,
+    abilityScoreMethod: toAbilityScoreMethod(row.abilityScoreMethod),
+    visibility: toCampaignVisibility(row.visibility),
+    joinPasswordHash: row.joinPasswordHash ?? null,
     dmId: row.dmId,
     createdAt: row.createdAt,
   };

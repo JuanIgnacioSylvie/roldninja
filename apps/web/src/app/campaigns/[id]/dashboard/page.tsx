@@ -1,9 +1,7 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { Responsive, WidthProvider, type Layout } from "react-grid-layout";
-import "react-grid-layout/css/styles.css";
-import "react-resizable/css/styles.css";
 import { GripVertical, X, Plus, LayoutGrid } from "lucide-react";
 import { CLASSES, type InitiativeEntry } from "@roldninja/domain";
 import type { TokenDTO } from "@roldninja/contracts";
@@ -16,10 +14,13 @@ import { Button, Card } from "@/components/ui";
 import { ChatWidget } from "@/components/widgets/ChatWidget";
 import { SheetWidget } from "@/components/widgets/SheetWidget";
 import { BoardWidget } from "@/components/widgets/BoardWidget";
-import { MonsterBankWidget, getMonsterTokenGridSize } from "@/components/widgets/MonsterBankWidget";
+import { MonsterBankEsWidget, MonsterBankEnWidget, getMonsterTokenGridSize } from "@/components/widgets/MonsterBankWidget";
 import { SpellsWidget, SpellCardWidget } from "@/components/widgets/SpellsWidget";
 import { NotepadWidget } from "@/components/widgets/NotepadWidget";
 import { TurnOrderWidget } from "@/components/widgets/TurnOrderWidget";
+import { RulesCompendiumWidget, RulesCompendiumEsWidget, RulesCompendiumEnWidget, RuleCardWidget } from "@/components/widgets/RulesCompendiumWidget";
+import { RULES_COMPENDIUM } from "@/data/rules-compendium";
+import { ruleTitle } from "@/lib/rules-compendium";
 import { InitiativePrompt } from "@/components/InitiativePrompt";
 import { useTranslation, useLocale } from "@/i18n/LocaleProvider";
 import { spellName, type SrdSpell } from "@/lib/srd-i18n";
@@ -31,16 +32,24 @@ type WidgetId = string;
 interface DashboardState {
   widgets: WidgetId[];
   layout: Layout[];
+  gridVersion?: number;
 }
 
+const GRID_ROW_HEIGHT = 22;
+const GRID_COLS = 24;
+
 const WIDGET_DEFAULTS: Record<string, { w: number; h: number; minW?: number; minH?: number }> = {
-  chat: { w: 3, h: 8, minW: 2, minH: 4 },
-  board: { w: 8, h: 14, minW: 4, minH: 6 },
-  sheet: { w: 3, h: 10, minW: 2, minH: 4 },
-  monsterBank: { w: 3, h: 10, minW: 2, minH: 4 },
-  spells: { w: 3, h: 8, minW: 2, minH: 4 },
-  notepad: { w: 3, h: 6, minW: 2, minH: 3 },
-  turnOrder: { w: 4, h: 8, minW: 3, minH: 5 },
+  chat: { w: 6, h: 16, minW: 4, minH: 8 },
+  board: { w: 16, h: 28, minW: 8, minH: 12 },
+  sheet: { w: 6, h: 20, minW: 4, minH: 8 },
+  monsterBank: { w: 6, h: 20, minW: 4, minH: 8 },
+  monsterBankEs: { w: 6, h: 20, minW: 4, minH: 8 },
+  monsterBankEn: { w: 6, h: 20, minW: 4, minH: 8 },
+  spells: { w: 6, h: 16, minW: 4, minH: 8 },
+  notepad: { w: 6, h: 12, minW: 4, minH: 6 },
+  turnOrder: { w: 8, h: 16, minW: 6, minH: 10 },
+  rulesCompendiumEs: { w: 8, h: 22, minW: 6, minH: 12 },
+  rulesCompendiumEn: { w: 8, h: 22, minW: 6, minH: 12 },
 };
 
 function storageKey(campaignId: string, userId: string) {
@@ -50,9 +59,66 @@ function storageKey(campaignId: string, userId: string) {
 function loadDashboard(campaignId: string, userId: string): DashboardState {
   try {
     const raw = localStorage.getItem(storageKey(campaignId, userId));
-    if (raw) return JSON.parse(raw) as DashboardState;
+    if (raw) return migrateDashboard(JSON.parse(raw) as DashboardState);
   } catch { /* ignore */ }
   return { widgets: [], layout: [] };
+}
+
+function migrateDashboard(state: DashboardState): DashboardState {
+  let next = state;
+  if (state.widgets.includes("monsterBank")) {
+    next = {
+      ...next,
+      widgets: next.widgets.map((w) => (w === "monsterBank" ? "monsterBankEs" : w)),
+      layout: next.layout.map((l) => (l.i === "monsterBank" ? { ...l, i: "monsterBankEs" } : l)),
+    };
+  }
+  if (next.gridVersion === 2) {
+    if (next.widgets.includes("rulesCompendium")) {
+      next = {
+        ...next,
+        widgets: next.widgets.map((w) => (w === "rulesCompendium" ? "rulesCompendiumEs" : w)),
+        layout: next.layout.map((l) =>
+          l.i === "rulesCompendium" ? { ...l, i: "rulesCompendiumEs" } : l,
+        ),
+      };
+    }
+    return next;
+  }
+  return {
+    ...next,
+    gridVersion: 2,
+    layout: next.layout.map((l) => ({
+      ...l,
+      w: l.w * 2,
+      h: l.h * 2,
+      minW: l.minW ? l.minW * 2 : undefined,
+      minH: l.minH ? l.minH * 2 : undefined,
+      maxW: l.maxW ? l.maxW * 2 : undefined,
+      maxH: l.maxH ? l.maxH * 2 : undefined,
+    })),
+  };
+}
+
+function findScrollParent(el: HTMLElement | null): HTMLElement | null {
+  let node = el?.parentElement ?? null;
+  while (node) {
+    const { overflowY } = getComputedStyle(node);
+    if (overflowY === "auto" || overflowY === "scroll" || overflowY === "overlay") return node;
+    node = node.parentElement;
+  }
+  return null;
+}
+
+function scrollToFollowResize(element: HTMLElement, event?: MouseEvent) {
+  const scrollParent = findScrollParent(element);
+  if (!scrollParent) return;
+  const parentRect = scrollParent.getBoundingClientRect();
+  const targetY = event?.clientY ?? element.getBoundingClientRect().bottom;
+  const margin = 56;
+  if (targetY > parentRect.bottom - margin) {
+    scrollParent.scrollTop += targetY - parentRect.bottom + margin;
+  }
 }
 
 function saveDashboard(campaignId: string, userId: string, state: DashboardState) {
@@ -117,9 +183,23 @@ export default function DashboardPage() {
     persist({ ...dashboard, layout: next });
   }
 
+  const onResize = useCallback(
+    (
+      _layout: Layout[],
+      _oldItem: Layout,
+      _newItem: Layout,
+      _placeholder: Layout,
+      event: MouseEvent,
+      element: HTMLElement,
+    ) => {
+      scrollToFollowResize(element, event);
+    },
+    [],
+  );
+
   function addWidget(widgetId: WidgetId) {
     if (dashboard.widgets.includes(widgetId)) return;
-    const base = WIDGET_DEFAULTS[widgetId] ?? { w: 3, h: 5, minW: 2, minH: 3 };
+    const base = WIDGET_DEFAULTS[widgetId] ?? { w: 6, h: 10, minW: 4, minH: 6 };
     const pos = nextPosition(dashboard.layout);
     const newLayout: Layout = {
       i: widgetId,
@@ -143,15 +223,6 @@ export default function DashboardPage() {
       layout: dashboard.layout.filter((l) => l.i !== widgetId),
     });
   }
-
-  function pinSpell(spellId: string) {
-    const widgetId = `spell:${spellId}`;
-    addWidget(widgetId);
-  }
-
-  const pinnedSpellIds = dashboard.widgets
-    .filter((w) => w.startsWith("spell:"))
-    .map((w) => w.replace("spell:", ""));
 
   useEffect(() => {
     const activeId = state?.activeBoardId;
@@ -212,10 +283,20 @@ export default function DashboardPage() {
   const availableWidgets = [
     { id: "chat", label: t.dashboard.widgets.chat },
     { id: "board", label: t.dashboard.widgets.board },
-    { id: isDM ? "monsterBank" : "sheet", label: isDM ? t.dashboard.widgets.monsterBank : t.dashboard.widgets.sheet },
-    { id: "spells", label: t.dashboard.widgets.spells },
+    ...(isDM
+      ? [
+          { id: "monsterBankEs", label: t.dashboard.widgets.monsterBankEs },
+          { id: "monsterBankEn", label: t.dashboard.widgets.monsterBankEn },
+        ]
+      : [{ id: "sheet", label: t.dashboard.widgets.sheet }]),
     { id: "notepad", label: t.dashboard.widgets.notepad },
     { id: "turnOrder", label: t.dashboard.widgets.turnOrder },
+  ];
+
+  const rulesWidgets = [
+    { id: "spells", label: t.dashboard.widgets.spells },
+    { id: "rulesCompendiumEs", label: t.dashboard.widgets.rulesCompendiumEs },
+    { id: "rulesCompendiumEn", label: t.dashboard.widgets.rulesCompendiumEn },
   ];
 
   function widgetTitle(widgetId: WidgetId): string {
@@ -223,12 +304,21 @@ export default function DashboardPage() {
       const spell = spellCatalog.find((s) => s.id === widgetId.replace("spell:", ""));
       return spell ? spellName(spell, locale) : widgetId.replace("spell:", "");
     }
+    if (widgetId.startsWith("rule:")) {
+      const rule = RULES_COMPENDIUM.rules.find((r) => r.id === widgetId.replace("rule:", ""));
+      return rule ? ruleTitle(rule, locale) : widgetId.replace("rule:", "");
+    }
     const map: Record<string, string> = {
       chat: t.dashboard.widgets.chat,
       board: t.dashboard.widgets.board,
       sheet: t.dashboard.widgets.sheet,
-      monsterBank: t.dashboard.widgets.monsterBank,
+      monsterBank: t.dashboard.widgets.monsterBankEs,
+      monsterBankEs: t.dashboard.widgets.monsterBankEs,
+      monsterBankEn: t.dashboard.widgets.monsterBankEn,
       spells: t.dashboard.widgets.spells,
+      rulesCompendium: t.dashboard.widgets.rulesCompendiumEs,
+      rulesCompendiumEs: t.dashboard.widgets.rulesCompendiumEs,
+      rulesCompendiumEn: t.dashboard.widgets.rulesCompendiumEn,
       notepad: t.dashboard.widgets.notepad,
       turnOrder: t.dashboard.widgets.turnOrder,
     };
@@ -238,6 +328,9 @@ export default function DashboardPage() {
   function renderWidget(widgetId: WidgetId) {
     if (widgetId.startsWith("spell:")) {
       return <SpellCardWidget spellId={widgetId.replace("spell:", "")} />;
+    }
+    if (widgetId.startsWith("rule:")) {
+      return <RuleCardWidget ruleId={widgetId.replace("rule:", "")} />;
     }
     switch (widgetId) {
       case "chat":
@@ -274,20 +367,17 @@ export default function DashboardPage() {
           />
         );
       case "monsterBank":
-        return (
-          <MonsterBankWidget
-            hasBoard={!!board}
-            onAddToBoard={addMonsterToBoard}
-          />
-        );
+      case "monsterBankEs":
+        return <MonsterBankEsWidget hasBoard={!!board} onAddToBoard={addMonsterToBoard} />;
+      case "monsterBankEn":
+        return <MonsterBankEnWidget hasBoard={!!board} onAddToBoard={addMonsterToBoard} />;
       case "spells":
-        return (
-          <SpellsWidget
-            classId={characterClassId}
-            pinnedSpellIds={pinnedSpellIds}
-            onPinSpell={pinSpell}
-          />
-        );
+        return <SpellsWidget classId={characterClassId} />;
+      case "rulesCompendium":
+      case "rulesCompendiumEs":
+        return <RulesCompendiumEsWidget campaignId={id} />;
+      case "rulesCompendiumEn":
+        return <RulesCompendiumEnWidget campaignId={id} />;
       case "notepad":
         return <NotepadWidget storageKey={`notepad:${id}:${user?.id}`} />;
       case "turnOrder":
@@ -320,7 +410,7 @@ export default function DashboardPage() {
             <Plus className="mr-1 inline h-3 w-3" /> {t.dashboard.addWidget}
           </Button>
           {showPicker && (
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap items-center gap-1">
               {availableWidgets.map((w) => (
                 <Button
                   key={w.id}
@@ -332,6 +422,22 @@ export default function DashboardPage() {
                   {w.label}
                 </Button>
               ))}
+              <select
+                className="rounded bg-panel2 px-2 py-1 text-xs text-parchment"
+                defaultValue=""
+                onChange={(e) => {
+                  const id = e.target.value;
+                  if (id) addWidget(id);
+                  e.target.value = "";
+                }}
+              >
+                <option value="">{t.dashboard.widgets.rulesGroup}</option>
+                {rulesWidgets.map((w) => (
+                  <option key={w.id} value={w.id} disabled={dashboard.widgets.includes(w.id)}>
+                    {w.label}
+                  </option>
+                ))}
+              </select>
             </div>
           )}
         </div>
@@ -349,10 +455,12 @@ export default function DashboardPage() {
             className="p-2"
             layouts={{ lg: dashboard.layout, md: dashboard.layout, sm: dashboard.layout, xs: dashboard.layout, xxs: dashboard.layout }}
             breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-            cols={{ lg: 12, md: 12, sm: 6, xs: 4, xxs: 2 }}
-            rowHeight={44}
+            cols={{ lg: GRID_COLS, md: GRID_COLS, sm: 12, xs: 8, xxs: 4 }}
+            rowHeight={GRID_ROW_HEIGHT}
+            margin={[8, 8]}
             draggableHandle=".drag-handle"
             onLayoutChange={onLayoutChange}
+            onResize={onResize}
           >
             {dashboard.widgets.map((widgetId) => (
               <div key={widgetId}>

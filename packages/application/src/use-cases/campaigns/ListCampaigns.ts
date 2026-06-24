@@ -10,6 +10,7 @@ export class ListCampaigns {
       id: c.id,
       name: c.name,
       description: c.description,
+      visibility: c.visibility,
       dmName: c.dmName,
       isDM: c.dmId === userId,
       memberCount: c.memberCount,

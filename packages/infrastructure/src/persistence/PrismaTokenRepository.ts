@@ -2,6 +2,11 @@ import type { PrismaClient } from "@roldninja/db";
 import { DEFAULT_TOKEN, type Token, type TokenDraft, type TokenRepository } from "@roldninja/domain";
 import { toToken } from "./mappers.js";
 
+function normalizeTokenSize(size: number | undefined): number {
+  const value = size ?? DEFAULT_TOKEN.size;
+  return Math.max(0.5, value);
+}
+
 export class PrismaTokenRepository implements TokenRepository {
   constructor(private readonly prisma: PrismaClient) {}
 
@@ -14,7 +19,7 @@ export class PrismaTokenRepository implements TokenRepository {
         y: draft.y ?? DEFAULT_TOKEN.y,
         color: draft.color ?? DEFAULT_TOKEN.color,
         imageUrl: draft.imageUrl ?? null,
-        size: draft.size ?? DEFAULT_TOKEN.size,
+        size: normalizeTokenSize(draft.size),
         characterId: draft.characterId ?? null,
         hidden: draft.hidden ?? DEFAULT_TOKEN.hidden,
         hp: draft.hp ?? null,
@@ -34,7 +39,7 @@ export class PrismaTokenRepository implements TokenRepository {
           y: draft.y,
           color: draft.color,
           imageUrl: draft.imageUrl === undefined ? undefined : draft.imageUrl,
-          size: draft.size,
+          size: draft.size === undefined ? undefined : normalizeTokenSize(draft.size),
           characterId: draft.characterId === undefined ? undefined : draft.characterId,
           hidden: draft.hidden,
           hp: draft.hp === undefined ? undefined : draft.hp,

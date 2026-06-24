@@ -130,30 +130,68 @@ export function srdSizeToTokenGrid(size: string): number {
   return map[size] ?? 1;
 }
 
-const MANUAL_FILES = {
-  phb: { en: "/manuals/phb.pdf", es: "/manuals/es/phb.pdf" },
-  dmg: { en: "/manuals/dmg.pdf", es: "/manuals/es/dmg.pdf" },
-  mm: { en: "/manuals/mm.pdf", es: "/manuals/es/mm.pdf" },
+const MANUAL_DRIVE_FILES = {
+  phb: {
+    es: "1eOfegY3qSYk_7zwjKX6EjQczSlyH4Dlg",
+    en: "15vpH28U1h7HaKBD6rY_aWdV52XDilOu1",
+  },
+  dmg: {
+    es: "10w7FeYrVF9c3NEbghs6ozuGcn81tuTno",
+    en: "1ziqH__1e270jAaBL64JSna0fP0v1FC5g",
+  },
+  mm: {
+    es: "15vpH28U1h7HaKBD6rY_aWdV52XDilOu1",
+    en: "1zyd7HjPvfpEt4M1Jd9YrM3u0-FtO_gMp",
+  },
 } as const;
 
-export type ManualId = keyof typeof MANUAL_FILES;
+export type ManualId = keyof typeof MANUAL_DRIVE_FILES;
 
-export function manualStaticPath(manualId: ManualId, locale: Locale): string {
-  const files = MANUAL_FILES[manualId];
-  return locale === "es" ? files.es : files.en;
+function driveViewUrl(fileId: string): string {
+  return `https://drive.google.com/file/d/${fileId}/view`;
 }
 
+function driveEmbedUrl(fileId: string): string {
+  return `https://drive.google.com/file/d/${fileId}/preview`;
+}
+
+export function manualDriveOpenUrl(manualId: ManualId, locale: Locale): string {
+  return driveViewUrl(MANUAL_DRIVE_FILES[manualId][locale]);
+}
+
+export function manualDriveEmbedUrl(manualId: ManualId, locale: Locale): string {
+  return driveEmbedUrl(MANUAL_DRIVE_FILES[manualId][locale]);
+}
+
+/** @deprecated Usar manualDriveOpenUrl / manualDriveEmbedUrl */
+export function manualStaticPath(manualId: ManualId, locale: Locale): string {
+  return manualDriveOpenUrl(manualId, locale);
+}
+
+export async function resolveManualEmbedUrl(
+  manualId: ManualId,
+  locale: Locale,
+): Promise<string> {
+  const stored = getManualUrl(manualId, locale) ?? (locale === "es" ? getManualUrl(manualId, "en") : null);
+  if (stored) return stored;
+  return manualDriveEmbedUrl(manualId, locale);
+}
+
+export async function resolveManualOpenUrl(
+  manualId: ManualId,
+  locale: Locale,
+): Promise<string> {
+  const stored = getManualUrl(manualId, locale) ?? (locale === "es" ? getManualUrl(manualId, "en") : null);
+  if (stored) return stored;
+  return manualDriveOpenUrl(manualId, locale);
+}
+
+/** URL para incrustar en iframe (Google Drive preview o PDF subido). */
 export async function resolveManualPdfUrl(
   manualId: ManualId,
   locale: Locale,
-): Promise<string | null> {
-  const preferred = manualStaticPath(manualId, locale);
-  if (await checkPdfExists(preferred)) return preferred;
-  if (locale === "es") {
-    const fallback = manualStaticPath(manualId, "en");
-    if (await checkPdfExists(fallback)) return fallback;
-  }
-  return null;
+): Promise<string> {
+  return resolveManualEmbedUrl(manualId, locale);
 }
 
 const MANUAL_STORAGE_KEY = "roldninja-manual-url";
@@ -165,13 +203,4 @@ export function getManualUrl(manualId: string, locale: Locale = "en"): string | 
 
 export function setManualUrl(manualId: string, url: string, locale: Locale = "en") {
   localStorage.setItem(`${MANUAL_STORAGE_KEY}:${manualId}:${locale}`, url);
-}
-
-export async function checkPdfExists(url: string): Promise<boolean> {
-  try {
-    const res = await fetch(url, { method: "HEAD" });
-    return res.ok && (res.headers.get("content-type")?.includes("pdf") ?? res.ok);
-  } catch {
-    return false;
-  }
 }

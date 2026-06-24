@@ -19,13 +19,19 @@
     "db:migrate": "pnpm --filter @roldninja/db migrate",
     "db:seed": "pnpm --filter @roldninja/db seed",
     "azgaar:setup": "node scripts/setup-azgaar.mjs",
+    "azgaar:valtherion": "node scripts/generate-valtherion-map.mjs",
+    "azgaar:valtherion:map": "node scripts/generate-valtherion-map.mjs && node scripts/json-to-azgaar-map.mjs maps/Valtherion.json maps/Valtherion.map",
     "monsters:fetch": "node scripts/fetch-monsters.mjs",
     "monsters:tokens": "node scripts/build-monster-token-index.mjs",
-    "spells:fetch": "node scripts/fetch-spells.mjs"
+    "spells:fetch": "node scripts/fetch-spells.mjs",
+    "compendium:extract-phb": "node scripts/probe-pdf.mjs \"c:/Users/juans/Desktop/D&D 5e - Players Handbook 2024.pdf\" scripts/.cache-phb.txt",
+    "compendium:extract-dmg": "node scripts/probe-pdf.mjs \"c:/Users/juans/Desktop/D&D 5e - Dungeon Master Guide 2024.pdf\" scripts/.cache-dmg.txt",
+    "compendium:build": "node scripts/build-compendium-from-pdf.mjs"
   },
   "devDependencies": {
+    "@types/node": "^22.13.0",
+    "pdf-parse": "^1.1.1",
     "turbo": "^2.5.4",
-    "typescript": "^5.7.3",
-    "@types/node": "^22.13.0"
+    "typescript": "^5.7.3"
   }
 }

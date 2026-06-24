@@ -6,6 +6,7 @@ const campaign = (overrides: Partial<Campaign> = {}): Campaign => ({
   id: "camp-1",
   name: "Lost Mine",
   description: null,
+  abilityScoreMethod: "pointbuy",
   dmId: "dm-1",
   createdAt: new Date("2024-01-01"),
   ...overrides,

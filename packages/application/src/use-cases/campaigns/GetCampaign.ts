@@ -27,6 +27,7 @@ export class GetCampaign {
       id: campaign.id,
       name: campaign.name,
       description: campaign.description,
+      abilityScoreMethod: campaign.abilityScoreMethod,
       dmName: dm?.displayName ?? "DM",
       isDM: AccessPolicy.isDM(campaign, userId),
       mode: state.mode,

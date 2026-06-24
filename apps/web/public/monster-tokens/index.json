@@ -2,6 +2,11 @@
   "sources": [
     {
       "type": "local",
+      "path": "wotc-2024",
+      "label": "Wizards — 2024 Monster Manual tokens (local)"
+    },
+    {
+      "type": "local",
       "path": "srd-samples",
       "label": "Tom Cartos — SRD Sample Tokens (local)"
     },
@@ -11,14 +16,16 @@
       "label": "Tom Cartos — Character & Creature Tokens"
     }
   ],
-  "files": 592,
-  "matched": 99,
+  "files": 673,
+  "matched": 118,
+  "srdMatched": 116,
+  "curatedMatched": 2,
   "map": {
     "aboleth": {
       "source": "local",
-      "fileName": "aboleth_large_aberration_01.png",
-      "path": "srd-samples/CR09-10 Sample Set/aboleth_large_aberration_01.png",
-      "url": "/monster-tokens/srd-samples/CR09-10%20Sample%20Set/aboleth_large_aberration_01.png"
+      "fileName": "Aboleth.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Aboleth.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Aboleth.png"
     },
     "adult-blue-dragon": {
       "source": "drive",
@@ -69,16 +76,9 @@
     },
     "ape": {
       "source": "local",
-      "fileName": "ape_medium_beast_01.png",
-      "path": "srd-samples/CR 0-5 Sample Set/ape_medium_beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR%200-5%20Sample%20Set/ape_medium_beast_01.png"
-    },
-    "archmage": {
-      "source": "drive",
-      "driveId": "1INkkIqXvJkui1fvS47ZylR5pJY5nyIAs",
-      "fileName": "drow archmage.png",
-      "path": "Drow - Dark Elves/drow archmage.png",
-      "url": "https://drive.google.com/thumbnail?id=1INkkIqXvJkui1fvS47ZylR5pJY5nyIAs&sz=w256"
+      "fileName": "Ape.png",
+      "path": "wotc-2024/Monster Manual/Beast/Ape.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Ape.png"
     },
     "awakened-tree": {
       "source": "local",
@@ -88,22 +88,21 @@
     },
     "baboon": {
       "source": "local",
-      "fileName": "Baboon_Small_Beast_01.png",
-      "path": "srd-samples/CR0 Sample Set/Baboon_Small_Beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR0%20Sample%20Set/Baboon_Small_Beast_01.png"
+      "fileName": "Baboon.png",
+      "path": "wotc-2024/Monster Manual/Beast/Baboon.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Baboon.png"
     },
     "badger": {
       "source": "local",
-      "fileName": "badger_small_beast_01.png",
-      "path": "srd-samples/custom/badger_small_beast_01.png",
-      "url": "/monster-tokens/srd-samples/custom/badger_small_beast_01.png"
+      "fileName": "Badger.png",
+      "path": "wotc-2024/Monster Manual/Beast/Badger.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Badger.png"
     },
     "bat": {
-      "source": "drive",
-      "driveId": "1Cn0MyO6cLDfN8ySWGvo1v4fXytcezhyS",
-      "fileName": "bat 1.png",
-      "path": "Beasts/Bats/bat 1.png",
-      "url": "https://drive.google.com/thumbnail?id=1Cn0MyO6cLDfN8ySWGvo1v4fXytcezhyS&sz=w256"
+      "source": "local",
+      "fileName": "Bat.png",
+      "path": "wotc-2024/Monster Manual/Beast/Bat.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Bat.png"
     },
     "behir": {
       "source": "drive",
@@ -112,11 +111,23 @@
       "path": "Beasts/Miscellaneous Beasts/behir.png",
       "url": "https://drive.google.com/thumbnail?id=1NbrfwZY0DLY62kI2-rEnqVOBDc-T07zn&sz=w256"
     },
+    "black-bear": {
+      "source": "local",
+      "fileName": "Black Bear.png",
+      "path": "wotc-2024/Monster Manual/Beast/Black Bear.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Black%20Bear.png"
+    },
+    "blood-hawk": {
+      "source": "local",
+      "fileName": "Blood Hawk.png",
+      "path": "wotc-2024/Monster Manual/Beast/Blood Hawk.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Blood%20Hawk.png"
+    },
     "boar": {
       "source": "local",
-      "fileName": "giant_boar_large_beast_01.png",
-      "path": "srd-samples/CR02 Part 1 Sample Set/giant_boar_large_beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR02%20Part%201%20Sample%20Set/giant_boar_large_beast_01.png"
+      "fileName": "Boar.png",
+      "path": "wotc-2024/Monster Manual/Beast/Boar.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Boar.png"
     },
     "bone-devil": {
       "source": "drive",
@@ -127,9 +138,9 @@
     },
     "brown-bear": {
       "source": "local",
-      "fileName": "brown_bear_large_beast_01.png",
-      "path": "srd-samples/CR01 Sample Set/brown_bear_large_beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR01%20Sample%20Set/brown_bear_large_beast_01.png"
+      "fileName": "Brown Bear.png",
+      "path": "wotc-2024/Monster Manual/Beast/Brown Bear.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Brown%20Bear.png"
     },
     "bugbear": {
       "source": "local",
@@ -137,12 +148,17 @@
       "path": "srd-samples/CR01 Sample Set/bugbear_melee_medium_humanoid_01.png",
       "url": "/monster-tokens/srd-samples/CR01%20Sample%20Set/bugbear_melee_medium_humanoid_01.png"
     },
+    "camel": {
+      "source": "local",
+      "fileName": "Camel.png",
+      "path": "wotc-2024/Monster Manual/Beast/Camel.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Camel.png"
+    },
     "cat": {
-      "source": "drive",
-      "driveId": "1HGA7XC64AXqFGd5S-Z9pD60j_Hs4z3td",
-      "fileName": "cat 1.png",
-      "path": "Beasts/Felines/cat 1.png",
-      "url": "https://drive.google.com/thumbnail?id=1HGA7XC64AXqFGd5S-Z9pD60j_Hs4z3td&sz=w256"
+      "source": "local",
+      "fileName": "Cat.png",
+      "path": "wotc-2024/Monster Manual/Beast/Cat.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Cat.png"
     },
     "centaur": {
       "source": "drive",
@@ -159,9 +175,15 @@
     },
     "chuul": {
       "source": "local",
-      "fileName": "chuul_large_aberration_01.png",
-      "path": "srd-samples/CR04 Sample Set/chuul_large_aberration_01.png",
-      "url": "/monster-tokens/srd-samples/CR04%20Sample%20Set/chuul_large_aberration_01.png"
+      "fileName": "Chuul.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Chuul.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Chuul.png"
+    },
+    "cloaker": {
+      "source": "local",
+      "fileName": "Cloaker.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Cloaker.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Cloaker.png"
     },
     "commoner": {
       "source": "local",
@@ -169,12 +191,23 @@
       "path": "srd-samples/custom/commoner_medium_humanoid_01.png",
       "url": "/monster-tokens/srd-samples/custom/commoner_medium_humanoid_01.png"
     },
+    "constrictor-snake": {
+      "source": "local",
+      "fileName": "Constrictor Snake.png",
+      "path": "wotc-2024/Monster Manual/Beast/Constrictor Snake.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Constrictor%20Snake.png"
+    },
     "crab": {
-      "source": "drive",
-      "driveId": "1ocleQZOBu7jMfPVR6mHFq4-6vu44RDNw",
-      "fileName": "crab with skull shell.png",
-      "path": "Beasts/Aquatic Creatures/crab with skull shell.png",
-      "url": "https://drive.google.com/thumbnail?id=1ocleQZOBu7jMfPVR6mHFq4-6vu44RDNw&sz=w256"
+      "source": "local",
+      "fileName": "Crab.png",
+      "path": "wotc-2024/Monster Manual/Beast/Crab.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Crab.png"
+    },
+    "crocodile": {
+      "source": "local",
+      "fileName": "Crocodile.png",
+      "path": "wotc-2024/Monster Manual/Beast/Crocodile.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Crocodile.png"
     },
     "cultist": {
       "source": "drive",
@@ -185,15 +218,21 @@
     },
     "darkmantle": {
       "source": "local",
-      "fileName": "darkmantle_small_monstrosity_01.png",
-      "path": "srd-samples/CR 0-5 Sample Set/darkmantle_small_monstrosity_01.png",
-      "url": "/monster-tokens/srd-samples/CR%200-5%20Sample%20Set/darkmantle_small_monstrosity_01.png"
+      "fileName": "Darkmantle.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Darkmantle.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Darkmantle.png"
     },
     "deer": {
       "source": "local",
-      "fileName": "Deer_Medium_Beast_01.png",
-      "path": "srd-samples/CR0 Sample Set/Deer_Medium_Beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR0%20Sample%20Set/Deer_Medium_Beast_01.png"
+      "fileName": "Deer.png",
+      "path": "wotc-2024/Monster Manual/Beast/Deer.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Deer.png"
+    },
+    "dire-wolf": {
+      "source": "local",
+      "fileName": "Dire Wolf.png",
+      "path": "wotc-2024/Monster Manual/Beast/Dire Wolf.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Dire%20Wolf.png"
     },
     "djinni": {
       "source": "drive",
@@ -201,6 +240,12 @@
       "fileName": "djinni arcanist flying.png",
       "path": "Djinni/djinni arcanist flying.png",
       "url": "https://drive.google.com/thumbnail?id=1P1dCPSFoWu_ixLULj4l-bdvzpIYzRygY&sz=w256"
+    },
+    "draft-horse": {
+      "source": "local",
+      "fileName": "Draft Horse.png",
+      "path": "wotc-2024/Monster Manual/Beast/Draft Horse.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Draft%20Horse.png"
     },
     "dragon-turtle": {
       "source": "local",
@@ -221,13 +266,6 @@
       "path": "Drow - Dark Elves/drow adolescent.png",
       "url": "https://drive.google.com/thumbnail?id=1NQKbug-Ws_DbsqqR9REOs9Fy_2MT1ghp&sz=w256"
     },
-    "druid": {
-      "source": "drive",
-      "driveId": "1aszT9IYqFSZ6bvV4twpeg3wnyajd8Z2L",
-      "fileName": "centaur druid.png",
-      "path": "Centaurs/centaur druid.png",
-      "url": "https://drive.google.com/thumbnail?id=1aszT9IYqFSZ6bvV4twpeg3wnyajd8Z2L&sz=w256"
-    },
     "duergar": {
       "source": "drive",
       "driveId": "1h9LuUN6wT7699ap2bvqRG5e9qBlvvhg6",
@@ -237,9 +275,9 @@
     },
     "eagle": {
       "source": "local",
-      "fileName": "Eagle_Small_Beast_01.png",
-      "path": "srd-samples/CR0 Sample Set/Eagle_Small_Beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR0%20Sample%20Set/Eagle_Small_Beast_01.png"
+      "fileName": "Eagle.png",
+      "path": "wotc-2024/Monster Manual/Beast/Eagle.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Eagle.png"
     },
     "earth-elemental": {
       "source": "local",
@@ -247,12 +285,17 @@
       "path": "srd-samples/CR05 Sample Set/earth_large_elemental_01.png",
       "url": "/monster-tokens/srd-samples/CR05%20Sample%20Set/earth_large_elemental_01.png"
     },
+    "elephant": {
+      "source": "local",
+      "fileName": "Elephant.png",
+      "path": "wotc-2024/Monster Manual/Beast/Elephant.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Elephant.png"
+    },
     "elk": {
-      "source": "drive",
-      "driveId": "1vHDwzfbNZ_RiTxAgkUPXOyKW6jsVNNfS",
-      "fileName": "elk in waterfall.png",
-      "path": "Beasts/Miscellaneous Beasts/elk in waterfall.png",
-      "url": "https://drive.google.com/thumbnail?id=1vHDwzfbNZ_RiTxAgkUPXOyKW6jsVNNfS&sz=w256"
+      "source": "local",
+      "fileName": "Elk.png",
+      "path": "wotc-2024/Monster Manual/Beast/Elk.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Elk.png"
     },
     "fire-elemental": {
       "source": "local",
@@ -261,11 +304,10 @@
       "url": "/monster-tokens/srd-samples/CR05%20Sample%20Set/fire_large_elemental_01.png"
     },
     "frog": {
-      "source": "drive",
-      "driveId": "1iI_hATPrhdVtat7UHPl9gfr7aEYFkm1v",
-      "fileName": "frog.png",
-      "path": "Beasts/Miscellaneous Beasts/frog.png",
-      "url": "https://drive.google.com/thumbnail?id=1iI_hATPrhdVtat7UHPl9gfr7aEYFkm1v&sz=w256"
+      "source": "local",
+      "fileName": "Frog.png",
+      "path": "wotc-2024/Monster Manual/Beast/Frog.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Frog.png"
     },
     "gelatinous-cube": {
       "source": "local",
@@ -279,17 +321,83 @@
       "path": "srd-samples/CR02 Part 3 Sample Set/ghast_medium_undead_01.png",
       "url": "/monster-tokens/srd-samples/CR02%20Part%203%20Sample%20Set/ghast_medium_undead_01.png"
     },
+    "giant-ape": {
+      "source": "local",
+      "fileName": "Giant Ape.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Ape.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Ape.png"
+    },
+    "giant-badger": {
+      "source": "local",
+      "fileName": "Giant Badger.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Badger.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Badger.png"
+    },
+    "giant-bat": {
+      "source": "local",
+      "fileName": "Giant Bat.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Bat.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Bat.png"
+    },
     "giant-boar": {
       "source": "local",
-      "fileName": "giant_boar_large_beast_01.png",
-      "path": "srd-samples/CR02 Part 1 Sample Set/giant_boar_large_beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR02%20Part%201%20Sample%20Set/giant_boar_large_beast_01.png"
+      "fileName": "Giant Boar.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Boar.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Boar.png"
+    },
+    "giant-centipede": {
+      "source": "local",
+      "fileName": "Giant Centipede.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Centipede.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Centipede.png"
+    },
+    "giant-constrictor-snake": {
+      "source": "local",
+      "fileName": "Giant Constrictor Snake.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Constrictor Snake.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Constrictor%20Snake.png"
+    },
+    "giant-crab": {
+      "source": "local",
+      "fileName": "Giant Crab.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Crab.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Crab.png"
+    },
+    "giant-crocodile": {
+      "source": "local",
+      "fileName": "Giant Crocodile.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Crocodile.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Crocodile.png"
     },
     "giant-fire-beetle": {
       "source": "local",
-      "fileName": "giant_owl_large_beast_01.png",
-      "path": "srd-samples/CR 0-25 Sample Set/giant_owl_large_beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_owl_large_beast_01.png"
+      "fileName": "Giant Fire Beetle.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Fire Beetle.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Fire%20Beetle.png"
+    },
+    "giant-frog": {
+      "source": "local",
+      "fileName": "Giant Frog.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Frog.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Frog.png"
+    },
+    "giant-goat": {
+      "source": "local",
+      "fileName": "Giant Goat.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Goat.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Goat.png"
+    },
+    "giant-hyena": {
+      "source": "local",
+      "fileName": "Giant Hyena.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Hyena.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Hyena.png"
+    },
+    "giant-lizard": {
+      "source": "local",
+      "fileName": "Giant Lizard.png",
+      "path": "wotc-2024/Monster Manual/Beast/Giant Lizard.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Beast/Giant%20Lizard.png"
     },
     "giant-owl": {
       "source": "local",
@@ -316,6 +424,12 @@
       "path": "srd-samples/CR 0-25 Sample Set/giant_wolf_spider_medium_beast_01.png",
       "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_wolf_spider_medium_beast_01.png"
     },
+    "gibbering-mouther": {
+      "source": "local",
+      "fileName": "Gibbering Mouther.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Gibbering Mouther.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Gibbering%20Mouther.png"
+    },
     "goblin": {
       "source": "local",
       "fileName": "goblin_medium_humanoid_ranged_01.png",
@@ -330,9 +444,15 @@
     },
     "grick": {
       "source": "local",
-      "fileName": "grick_medium_monstrosity_01.png",
-      "path": "srd-samples/CR02 Part 3 Sample Set/grick_medium_monstrosity_01.png",
-      "url": "/monster-tokens/srd-samples/CR02%20Part%203%20Sample%20Set/grick_medium_monstrosity_01.png"
+      "fileName": "Grick.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Grick.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Grick.png"
+    },
+    "grimlock": {
+      "source": "local",
+      "fileName": "Grimlock.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Grimlock.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Grimlock.png"
     },
     "hawk": {
       "source": "drive",
@@ -395,13 +515,6 @@
       "path": "srd-samples/custom/jackal_medium_beast_01.png",
       "url": "/monster-tokens/srd-samples/custom/jackal_medium_beast_01.png"
     },
-    "knight": {
-      "source": "drive",
-      "driveId": "1SHZqot-tTGVpUZ3_kKmr7JPh7qJOk7Pc",
-      "fileName": "elf dark knight.png",
-      "path": "Elves and Half-Elves/elf dark knight.png",
-      "url": "https://drive.google.com/thumbnail?id=1SHZqot-tTGVpUZ3_kKmr7JPh7qJOk7Pc&sz=w256"
-    },
     "kraken": {
       "source": "drive",
       "driveId": "1tpLhCgpT4Flv_SSVOtB8_j4VIJfrUxwr",
@@ -427,13 +540,6 @@
       "path": "srd-samples/CR0 Sample Set/Lizard_Tiny_Beast_01.png",
       "url": "/monster-tokens/srd-samples/CR0%20Sample%20Set/Lizard_Tiny_Beast_01.png"
     },
-    "mage": {
-      "source": "drive",
-      "driveId": "19wQyIh0oUjSXzj4u8cPma9CqiughFixP",
-      "fileName": "elf mage tracker.png",
-      "path": "Elves and Half-Elves/elf mage tracker.png",
-      "url": "https://drive.google.com/thumbnail?id=19wQyIh0oUjSXzj4u8cPma9CqiughFixP&sz=w256"
-    },
     "mimic": {
       "source": "local",
       "fileName": "mimic_medium_monstrosity_01.png",
@@ -453,13 +559,6 @@
       "path": "Abberations/nightmare given form.png",
       "url": "https://drive.google.com/thumbnail?id=1ykofTfch3oZ_kcIk5R_KVqorTiK9Z4NA&sz=w256"
     },
-    "noble": {
-      "source": "drive",
-      "driveId": "1K6mKEmp48aGVHHL_gagIT2_uU48s_f4Z",
-      "fileName": "drow noble contemplative.png",
-      "path": "Drow - Dark Elves/drow noble contemplative.png",
-      "url": "https://drive.google.com/thumbnail?id=1K6mKEmp48aGVHHL_gagIT2_uU48s_f4Z&sz=w256"
-    },
     "octopus": {
       "source": "drive",
       "driveId": "15GmUh64buq-QhHjZNO6rVv1izvGNmage",
@@ -473,11 +572,18 @@
       "path": "srd-samples/CR07-08 Sample Set/oni_large_giant_01.png",
       "url": "/monster-tokens/srd-samples/CR07-08%20Sample%20Set/oni_large_giant_01.png"
     },
-    "owl": {
+    "otyugh": {
       "source": "local",
-      "fileName": "giant_owl_large_beast_01.png",
-      "path": "srd-samples/CR 0-25 Sample Set/giant_owl_large_beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_owl_large_beast_01.png"
+      "fileName": "Otyugh.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Otyugh.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Otyugh.png"
+    },
+    "owl": {
+      "source": "drive",
+      "driveId": "1Wcwgf9VhXU3eYv9JPRsby-Vw_v4rL4qc",
+      "fileName": "owl-folk thinker.png",
+      "path": "Bird-folk/owl-folk thinker.png",
+      "url": "https://drive.google.com/thumbnail?id=1Wcwgf9VhXU3eYv9JPRsby-Vw_v4rL4qc&sz=w256"
     },
     "owlbear": {
       "source": "local",
@@ -517,6 +623,12 @@
       "path": "Beasts/Birds/raven 1.png",
       "url": "https://drive.google.com/thumbnail?id=1x-LIiNXi7uFMbJ7MxZVCQpQfuGMMhyw6&sz=w256"
     },
+    "roper": {
+      "source": "local",
+      "fileName": "Roper.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Roper.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Roper.png"
+    },
     "rug-of-smothering": {
       "source": "local",
       "fileName": "rug-of-smothering_large_construct_04.png",
@@ -535,13 +647,6 @@
       "fileName": "scorpion.png",
       "path": "Beasts/Aranae and other Arthropods/scorpion.png",
       "url": "https://drive.google.com/thumbnail?id=1V6nlxAmcsPZstdtEfW6joBAwIzoy7wr_&sz=w256"
-    },
-    "scout": {
-      "source": "drive",
-      "driveId": "1B4WHUA8XQdqPjb4wLB_km1809C-karqe",
-      "fileName": "centaur scout.png",
-      "path": "Centaurs/centaur scout.png",
-      "url": "https://drive.google.com/thumbnail?id=1B4WHUA8XQdqPjb4wLB_km1809C-karqe&sz=w256"
     },
     "sea-horse": {
       "source": "local",
@@ -567,12 +672,6 @@
       "fileName": "skeleton_medium_undead_melee01.png",
       "path": "srd-samples/CR 0-25 Sample Set/skeleton_medium_undead_melee01.png",
       "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/skeleton_medium_undead_melee01.png"
-    },
-    "spider": {
-      "source": "local",
-      "fileName": "giant_wolf_spider_medium_beast_01.png",
-      "path": "srd-samples/CR 0-25 Sample Set/giant_wolf_spider_medium_beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_wolf_spider_medium_beast_01.png"
     },
     "steam-mephit": {
       "source": "local",
@@ -631,10 +730,11 @@
       "url": "https://drive.google.com/thumbnail?id=19CsMh_lZGoyfZIuWe0xlRine2cI1Y2Dt&sz=w256"
     },
     "wolf": {
-      "source": "local",
-      "fileName": "giant_wolf_spider_medium_beast_01.png",
-      "path": "srd-samples/CR 0-25 Sample Set/giant_wolf_spider_medium_beast_01.png",
-      "url": "/monster-tokens/srd-samples/CR%200-25%20Sample%20Set/giant_wolf_spider_medium_beast_01.png"
+      "source": "drive",
+      "driveId": "1TMclOvOhSLXWjZSlJvCEvW3H1E-xYKAJ",
+      "fileName": "wolf abberation.png",
+      "path": "Abberations/wolf abberation.png",
+      "url": "https://drive.google.com/thumbnail?id=1TMclOvOhSLXWjZSlJvCEvW3H1E-xYKAJ&sz=w256"
     },
     "zombie": {
       "source": "drive",
@@ -642,6 +742,18 @@
       "fileName": "zombie abberation.png",
       "path": "Abberations/zombie abberation.png",
       "url": "https://drive.google.com/thumbnail?id=1AImKlo4G_dPwc7XDH692ndLzLbrkmkaZ&sz=w256"
+    },
+    "contemplador": {
+      "source": "local",
+      "fileName": "Beholder.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Beholder.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Beholder.png"
+    },
+    "azotamentes": {
+      "source": "local",
+      "fileName": "Mind Flayer.png",
+      "path": "wotc-2024/Monster Manual/Aberration/Mind Flayer.png",
+      "url": "/monster-tokens/wotc-2024/Monster%20Manual/Aberration/Mind%20Flayer.png"
     }
   }
 }

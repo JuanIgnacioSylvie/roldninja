@@ -1,6 +1,11 @@
 [
   {
     "type": "local",
+    "path": "wotc-2024",
+    "label": "Wizards — 2024 Monster Manual tokens (local)"
+  },
+  {
+    "type": "local",
     "path": "srd-samples",
     "label": "Tom Cartos — SRD Sample Tokens (local)"
   },

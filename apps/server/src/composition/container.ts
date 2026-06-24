@@ -3,8 +3,10 @@ import { DiceService } from "@roldninja/domain";
 import {
   LoginUser,
   ListCampaigns,
+  ListPublicCampaigns,
   GetCampaign,
   CreateCampaign,
+  EnrollInCampaign,
   ListCharacters,
   GetCharacter,
   CreateCharacter,
@@ -74,8 +76,10 @@ export function createContainer() {
     login: new LoginUser(users, hasher, tokenService),
 
     listCampaigns: new ListCampaigns(campaigns),
+    listPublicCampaigns: new ListPublicCampaigns(campaigns),
     getCampaign: new GetCampaign(campaigns, users, states),
-    createCampaign: new CreateCampaign(campaigns),
+    createCampaign: new CreateCampaign(campaigns, hasher),
+    enrollInCampaign: new EnrollInCampaign(campaigns, hasher),
 
     listCharacters: new ListCharacters(campaigns, characters),
     getCharacter: new GetCharacter(campaigns, characters),

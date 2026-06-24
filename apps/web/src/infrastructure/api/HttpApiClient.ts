@@ -6,6 +6,7 @@ import type {
   CampaignSummaryDTO,
   CharacterSummaryDTO,
   LoginResponseDTO,
+  PublicCampaignSummaryDTO,
   UploadResultDTO,
 } from "@roldninja/contracts";
 import type {
@@ -62,11 +63,29 @@ export class HttpApiClient implements ApiGateway {
   listCampaigns(): Promise<CampaignSummaryDTO[]> {
     return this.get<CampaignSummaryDTO[]>("/campaigns");
   }
+  listPublicCampaigns(): Promise<PublicCampaignSummaryDTO[]> {
+    return this.get<PublicCampaignSummaryDTO[]>("/campaigns/public");
+  }
   getCampaign(id: string): Promise<CampaignDetailDTO> {
     return this.get<CampaignDetailDTO>(`/campaigns/${id}`);
   }
-  createCampaign(name: string, description?: string): Promise<{ id: string }> {
-    return this.post<{ id: string }>("/campaigns", { name, description });
+  createCampaign(
+    name: string,
+    description?: string,
+    abilityScoreMethod?: "pointbuy" | "array",
+    visibility?: "public" | "private",
+    joinPassword?: string,
+  ): Promise<{ id: string }> {
+    return this.post<{ id: string }>("/campaigns", {
+      name,
+      description,
+      abilityScoreMethod,
+      visibility,
+      joinPassword,
+    });
+  }
+  joinCampaign(campaignId: string, joinPassword?: string): Promise<void> {
+    return this.post<void>(`/campaigns/${campaignId}/join`, { joinPassword });
   }
 
   listCharacters(campaignId: string): Promise<CharacterSummaryDTO[]> {

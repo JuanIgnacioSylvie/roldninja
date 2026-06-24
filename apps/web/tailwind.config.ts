@@ -23,8 +23,9 @@ export default {
         "brand-light": "#a855f7",
       },
       fontFamily: {
-        display: ["Inter", "system-ui", "sans-serif"],
-        body: ["Inter", "system-ui", "sans-serif"],
+        hero: ["var(--font-hero)", "serif"],
+        display: ["var(--font-body)", "serif"],
+        body: ["var(--font-body)", "serif"],
       },
       boxShadow: {
         glow: "0 0 80px -20px rgba(133, 59, 206, 0.35)",

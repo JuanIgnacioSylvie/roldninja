@@ -45,6 +45,7 @@ export default function CreateCharacterPage() {
   const [skills, setSkills] = useState<string[]>([]);
 
   const [method, setMethod] = useState<"pointbuy" | "array">("pointbuy");
+  const [campaignMethodLoaded, setCampaignMethodLoaded] = useState(false);
   const [scores, setScores] = useState<AbilityScores>(baseScores());
   const [arrayAssign, setArrayAssign] = useState<Record<Ability, number | null>>({
     str: null, dex: null, con: null, int: null, wis: null, cha: null,
@@ -61,6 +62,13 @@ export default function CreateCharacterPage() {
       if (c.name && c.name !== "Nuevo personaje") setName(c.name);
     });
   }, [charId, api]);
+
+  useEffect(() => {
+    void api.getCampaign(id).then((campaign) => {
+      setMethod(campaign.abilityScoreMethod);
+      setCampaignMethodLoaded(true);
+    });
+  }, [id, api]);
 
   // Puntuaciones finales (base + trasfondo).
   const finalScores = useMemo<AbilityScores>(() => {
@@ -235,14 +243,14 @@ export default function CreateCharacterPage() {
 
           {step === 3 && (
             <Step title="Puntuaciones de característica">
-              <div className="mb-4 flex gap-2">
-                <Button variant={method === "pointbuy" ? "gold" : "ghost"} size="sm" onClick={() => setMethod("pointbuy")}>
-                  Point Buy
-                </Button>
-                <Button variant={method === "array" ? "gold" : "ghost"} size="sm" onClick={() => setMethod("array")}>
-                  Array estándar
-                </Button>
-              </div>
+              {campaignMethodLoaded && (
+                <p className="mb-3 text-sm text-parchment/60">
+                  {t.createCharacter.abilityScoreDmChoice}{" "}
+                  <span className="text-gold">
+                    {method === "pointbuy" ? t.createCharacter.abilityScorePointBuy : t.createCharacter.abilityScoreArray}
+                  </span>
+                </p>
+              )}
 
               {method === "pointbuy" ? (
                 <>

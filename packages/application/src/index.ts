@@ -11,8 +11,10 @@ export * from "./mappers.js";
 export * from "./use-cases/auth/LoginUser.js";
 
 export * from "./use-cases/campaigns/ListCampaigns.js";
+export * from "./use-cases/campaigns/ListPublicCampaigns.js";
 export * from "./use-cases/campaigns/GetCampaign.js";
 export * from "./use-cases/campaigns/CreateCampaign.js";
+export * from "./use-cases/campaigns/EnrollInCampaign.js";
 
 export * from "./use-cases/characters/ListCharacters.js";
 export * from "./use-cases/characters/GetCharacter.js";

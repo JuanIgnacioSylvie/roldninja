@@ -18,6 +18,17 @@ enum ChatKind {
   ROLL
 }
 
+/// Método de generación de puntuaciones de característica (definido por el DM al crear la partida).
+enum AbilityScoreMethod {
+  POINT_BUY
+  STANDARD_ARRAY
+}
+
+enum CampaignVisibility {
+  PUBLIC
+  PRIVATE
+}
+
 /// Usuarios creados manualmente en la DB (login unico). Todos iguales; el rol (DM/jugador) es por partida.
 model User {
   id           String   @id @default(cuid())
@@ -35,11 +46,14 @@ model User {
 
 /// Una partida / mesa. Pertenece a un DM.
 model Campaign {
-  id          String   @id @default(cuid())
-  name        String
-  description String?
-  dmId        String
-  createdAt   DateTime @default(now())
+  id                 String              @id @default(cuid())
+  name               String
+  description        String?
+  abilityScoreMethod AbilityScoreMethod  @default(POINT_BUY)
+  visibility         CampaignVisibility  @default(PRIVATE)
+  joinPasswordHash   String?
+  dmId               String
+  createdAt          DateTime            @default(now())
 
   dm          User                 @relation("CampaignDM", fields: [dmId], references: [id])
   members     CampaignMembership[]
@@ -115,7 +129,7 @@ model Token {
   y           Int     @default(0)
   color       String  @default("#e11d48")
   imageUrl    String?
-  size        Int     @default(1)
+  size        Float   @default(1)
   /// Visible solo para el DM (token oculto a los jugadores).
   hidden      Boolean @default(false)
   hp          Int?

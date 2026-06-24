@@ -34,7 +34,7 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
       <Card className="w-full max-w-md p-8">
-        <h1 className="mb-1 text-center font-display text-3xl text-white">{t.auth.title}</h1>
+        <h1 className="mb-1 text-center font-hero text-4xl tracking-wide text-white">{t.auth.title}</h1>
         <p className="mb-6 text-center text-sm text-muted">{t.auth.subtitle}</p>
         <form onSubmit={onSubmit} className="space-y-4">
           <div className="space-y-1">

@@ -1,4 +1,5 @@
 import type {
+  AbilityScoreMethod,
   AuthenticatedUser,
   Board,
   CampaignMode,
@@ -32,16 +33,26 @@ export interface CampaignSummaryDTO {
   id: string;
   name: string;
   description: string | null;
+  visibility: "public" | "private";
   dmName: string;
   isDM: boolean;
   memberCount: number;
   characterCount: number;
 }
 
+export interface PublicCampaignSummaryDTO {
+  id: string;
+  name: string;
+  description: string | null;
+  dmName: string;
+  memberCount: number;
+}
+
 export interface CampaignDetailDTO {
   id: string;
   name: string;
   description: string | null;
+  abilityScoreMethod: AbilityScoreMethod;
   dmName: string;
   isDM: boolean;
   mode: CampaignMode;

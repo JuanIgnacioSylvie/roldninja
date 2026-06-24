@@ -36,4 +36,5 @@ npm-debug.log*
 Thumbs.db
 .idea/
 .vscode/*
-!.vscode/extensions.json
+# PDF extraction cache (local; regenerate with pnpm compendium:build)
+scripts/.cache-*.txt

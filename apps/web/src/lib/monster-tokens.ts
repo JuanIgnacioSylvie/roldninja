@@ -11,6 +11,8 @@ export interface MonsterTokenIndex {
   sources: { type: string; label: string; path?: string; id?: string }[];
   files: number;
   matched: number;
+  srdMatched?: number;
+  curatedMatched?: number;
   map: Record<string, MonsterTokenEntry>;
 }
 

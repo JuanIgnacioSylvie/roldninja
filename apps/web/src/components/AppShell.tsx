@@ -28,7 +28,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 flex items-center justify-between border-b border-white/[0.06] bg-ink/90 px-4 py-3 backdrop-blur-md">
-        <Link href="/campaigns" className="font-display text-lg text-white">
+        <Link href="/campaigns" className="font-hero text-xl tracking-wide text-white">
           Roldninja
         </Link>
         <div className="flex items-center gap-3">

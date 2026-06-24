@@ -1,13 +1,8 @@
-Colocá aquí los PDFs de los manuales:
+Los manuales ya no se alojan en este repositorio (pesan demasiado para git).
 
-Inglés (`/manuals/`):
-- `phb.pdf` — Player's Handbook
-- `dmg.pdf` — Dungeon Master's Guide
-- `mm.pdf` — Monster Manual
+Se sirven desde Google Drive según el idioma de la app:
+- Manual del Jugador / Player's Handbook (phb)
+- Guía del DM / Dungeon Master's Guide (dmg)
+- Manual de Monstruos / Monster Manual (mm)
 
-Español (`/manuals/es/`):
-- `phb.pdf` — Manual del Jugador
-- `dmg.pdf` — Guía del Dungeon Master
-- `mm.pdf` — Manual de Monstruos
-
-La app abre los PDFs en español si el idioma está en ES; si no encuentra el archivo, usa el de inglés.
+Los IDs de Drive están en apps/web/src/lib/srd-i18n.ts (MANUAL_DRIVE_FILES).

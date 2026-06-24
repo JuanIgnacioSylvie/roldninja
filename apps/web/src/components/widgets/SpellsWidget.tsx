@@ -1,9 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { Plus } from "lucide-react";
 import { CLASSES } from "@roldninja/domain";
 import { useTranslation, useLocale } from "@/i18n/LocaleProvider";
-import { Button } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import {
   spellCastingTime,
@@ -16,11 +14,9 @@ import {
 
 interface SpellsWidgetProps {
   classId?: string;
-  pinnedSpellIds?: string[];
-  onPinSpell?: (spellId: string) => void;
 }
 
-export function SpellsWidget({ classId, pinnedSpellIds = [], onPinSpell }: SpellsWidgetProps) {
+export function SpellsWidget({ classId }: SpellsWidgetProps) {
   const t = useTranslation();
   const { locale } = useLocale();
   const [spells, setSpells] = useState<SrdSpell[]>([]);
@@ -88,7 +84,6 @@ export function SpellsWidget({ classId, pinnedSpellIds = [], onPinSpell }: Spell
                       className={cn(
                         "flex w-full items-center justify-between rounded px-2 py-1.5 text-left text-xs transition",
                         selectedSpell?.id === spell.id ? "bg-arcane text-white" : "hover:bg-white/10",
-                        pinnedSpellIds.includes(spell.id) && "border border-gold/40",
                       )}
                     >
                       <span>{spellName(spell, locale)}</span>
@@ -108,11 +103,6 @@ export function SpellsWidget({ classId, pinnedSpellIds = [], onPinSpell }: Spell
             {spellSchool(selectedSpell, locale)} · {spellCastingTime(selectedSpell, locale)} · {selectedSpell.range}
           </p>
           <p className="mt-1 line-clamp-4 text-xs text-parchment/70">{spellDescription(selectedSpell, locale)}</p>
-          {onPinSpell && !pinnedSpellIds.includes(selectedSpell.id) && (
-            <Button size="sm" variant="ghost" className="mt-2 w-full" onClick={() => onPinSpell(selectedSpell.id)}>
-              <Plus className="mr-1 inline h-3 w-3" /> {t.spells.addToDashboard}
-            </Button>
-          )}
         </div>
       )}
     </div>

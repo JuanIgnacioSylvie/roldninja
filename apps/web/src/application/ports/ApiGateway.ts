@@ -5,6 +5,7 @@ import type {
   CampaignSummaryDTO,
   CharacterSummaryDTO,
   LoginResponseDTO,
+  PublicCampaignSummaryDTO,
   UploadResultDTO,
 } from "@roldninja/contracts";
 
@@ -49,8 +50,16 @@ export interface ApiGateway {
   login(username: string, password: string): Promise<LoginResponseDTO>;
 
   listCampaigns(): Promise<CampaignSummaryDTO[]>;
+  listPublicCampaigns(): Promise<PublicCampaignSummaryDTO[]>;
   getCampaign(id: string): Promise<CampaignDetailDTO>;
-  createCampaign(name: string, description?: string): Promise<{ id: string }>;
+  createCampaign(
+    name: string,
+    description?: string,
+    abilityScoreMethod?: "pointbuy" | "array",
+    visibility?: "public" | "private",
+    joinPassword?: string,
+  ): Promise<{ id: string }>;
+  joinCampaign(campaignId: string, joinPassword?: string): Promise<void>;
 
   listCharacters(campaignId: string): Promise<CharacterSummaryDTO[]>;
   getCharacter(id: string): Promise<Character>;
